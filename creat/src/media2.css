@@ -1,0 +1,140 @@
+@media (max-width: 500px) {
+  
+
+    /* Первый блок */
+   .parent-Block {
+        height: 600px;
+        background-image: url(FomMob1.jpg);
+  background-size: cover;
+   }
+
+   .window-Block {
+
+   }
+
+   .window-Block a {
+    font-size: 35px;
+   }
+
+   .window-Block h2{
+    margin-top: 100px;
+        font-size: 30px;
+   }
+
+   .window-Block h3 {
+    
+        font-size: 15px;
+   }
+   .b2 {
+    margin-top: 50px;
+   }
+   .b4 {
+    margin-top: 50px;
+   }
+
+   /* Второй блок */
+
+   .service-block {
+        width: auto;
+        height: 600px;
+        align-items: center;
+        margin-left: 3%;
+
+   }
+
+   .service-block h1 {
+        font-size: 30px;
+   }
+
+
+   .IP {
+        font-size: 13px;
+        border-spacing: 30px 30px;
+   }
+
+   .iphone,
+   .and,
+   .Not {
+    height: 30px;    
+    width: 110px;
+    font-size: 10px;
+    margin: 5px 5px;
+   }
+
+   .b3 {
+        font-size: 15px;
+        height: 40px;
+        width: 250px;
+
+   }
+
+
+
+
+   /* Третий блок */
+
+   .remont-block {
+
+   }
+   .remont-block h1 {
+        font-size: 25px;
+   }
+   .remont-block h2 {
+        margin-top: 50px;
+        font-size: 25px;
+   }
+   .post {
+        margin-top: 150px;
+   }
+
+
+   /* Четвертый блок */
+
+    .PL {
+
+    }
+    .PL h1{
+       font-size: 25px; 
+    }
+
+    .button-style {
+        font-size: 20px;
+    }
+    .image1 {
+        width: 450px;
+        height: 600px;
+    }
+
+   /* Пятый блок */
+    
+    .Maps {
+        height: 85em;
+    }
+
+    .Map-wrapper {
+        margin-top: 50vw;
+        flex: 1px;
+        margin: 20em 30em;
+        margin-top: 20px;
+        width: 180%;
+        height: 100%;
+        
+    }
+    .Maps-conteiner {
+        
+        margin-top:100px ;
+    }
+
+   /* Шестой блок */
+
+   .OTZ {
+    margin-top: -50px;
+    height: 70em;
+    
+   }
+
+    .OTZ h1 {
+        font-size: 30px;
+    }
+
+  }

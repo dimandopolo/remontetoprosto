@@ -1,0 +1,171 @@
+@media (max-width: 768px) {
+
+
+    body {
+      margin: 0;
+    }
+  
+    header {
+       
+        /*align-items: flex-start;  Выравниваем элементы по левому краю */
+        height: 30px;
+        text-align: center;
+        margin-top: 20px;
+        align-items: center;
+    }
+  
+    .header {
+        /*flex-direction: column;  Ссылки также располагаем вертикально */
+        gap: 30px; /* Уменьшаем пробел между ссылками */
+    }
+  
+    .parent-Block {
+      align-items: center;
+    }
+  
+    /* 3 БЛОК */
+  
+  .service-block {
+    background-color: white;
+    /* Цвет фона для блока */
+    color: black;
+    /* Цвет текста */
+    max-width: 1500px;
+    /* Внутренние отступы */
+    width: auto;
+    /* Ширина блока */
+    display: flex;
+    text-align: center;
+    /* Центрирование текста */
+    height: 800px;
+    margin-top: 10px;
+    margin-left: -40px;
+    /* Используем flexbox для центрирования */
+    flex-direction: column;
+    /* Располагаем кнопки в колонку */
+    align-items: center;
+    /* Центрируем кнопки по вертикали */
+    
+    
+  }
+  
+  .iphone,
+  .and,
+  .Not {
+    height: 55px;
+    /* Высота кнопок */
+    width: 160px;
+    /* Ширина кнопок */
+    border-radius: 10px;
+    /* Закругление краёв кнопок */
+    background: #5285fd;
+    /* Цвет фона кнопок */
+    border: none;
+    /* Убираем рамку */
+    color: white;
+    /* Цвет текста кнопок */
+    font-weight: 800;
+    /* Жирный текст */
+    font-size: 15px;
+    /* Размер шрифта */
+    margin: 10px 10px;
+    /* Отступ сверху и снизу между кнопками (5px) */
+  
+  
+  }
+  
+  .IP {
+  
+    font-size: 20px;
+    border-collapse: separate;
+    border-spacing: 50px 50px;
+    text-align: left;
+    margin: auto;
+    margin-top: 35px;
+  }
+  
+  .b3 {
+    height: 55px;
+    /* Высота кнопки */
+    width: 300px;
+    /* Ширина кнопки */
+    border-radius: 10px;
+    /* Закругление краёв кнопки */
+    background: red;
+    /* Цвет фона кнопки */
+    border: none;
+    /* Убираем рамку */
+    color: white;
+    /* Цвет текста кнопки */
+    font-weight: 800;
+    /* Жирный текст */
+    font-size: 20px;
+    /* Размер шрифта */
+    margin: 0;
+    /* Убираем отступы */
+    margin-bottom: 30px;
+  }
+  
+  /* КАРТЫ  */
+  
+  .Maps {
+    height: 1200px;
+    width: 100%;
+    /* Ширина блока */
+    max-width: 1500px;
+    /* Максимальная ширина блока */
+    justify-content: space-between;
+    /* Разделение пространства между изображениями */
+    
+    
+    align-items: center;
+    border-radius: 20px;
+    
+  }
+  
+  .Map-wrapper {
+    flex: 1;
+    /* Каждой карте назначаем равное пространство */
+    margin: 0 20px;
+    /* Отступы между картами */
+    width: 400;
+    height: 200;
+  }
+  
+  
+  
+  
+  .Maps-container {
+    display: flex;
+    /* Используем flexbox для размещения карт */
+    justify-content: space-between;
+    /* Распределяем пространство между картами */
+    margin: 20px 0;
+    /* Отступы между картами */
+    flex-direction: column; /* Изменяем направление на вертикальное для мобильных устройств */
+        align-items: center;
+        margin-left: 25%;
+        width: 50%;
+    height: 50%;
+    
+  }
+  
+  .OTZ {
+    height: auto;
+  }
+  
+  .remont-block {
+    flex-direction: column; /* Вертикальное расположение */
+    align-items: center; /* Центрируем посты по горизонтали */
+    height: 1800px;
+    
+    justify-content: space-between;
+  }
+  .post {
+    margin-top: 150px;
+    
+  }
+  }
+  
+  
+ 

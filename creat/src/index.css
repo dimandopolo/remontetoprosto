@@ -1,0 +1,700 @@
+body {
+  margin: 0;
+  font-family: "Onest", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.service-block h1 {
+  font-size: 52px;
+  font-weight: 650;
+}
+
+.button-style {
+  border-radius: 30px;
+  background-color: #2561f9;
+  width: 600px;
+  height: 60px;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+.button-style:hover {
+  transform: scale(1.02);
+}
+
+header {
+  display: flex;
+  justify-content: center; /* Центрируем элементы по горизонтали */
+  align-items: center; /* Центрируем элементы по вертикали */
+  
+  /*border-bottom: 1px solid #ddd;  Нижняя граница */
+  height: 50px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  
+}
+
+.header {
+  display: flex; /* Используем Flexbox для размещения ссылок */
+  gap: 60px; /* Пробел между ссылками */
+}
+
+.header a {
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none; /* Убираем подчеркивание */
+  color: black; /* Цвет текста */
+  transition: color 0.3s; /* Плавный переход цвета при наведении */
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+header a:hover {
+  filter: drop-shadow(0px 0px 20px #2561f940);
+  color: #2561f9;
+}
+
+
+
+.footer {
+  height: auto;
+  width: 100px;
+  background-color: black;
+}
+
+/* 1 БЛОК  */
+
+.parent-Block {
+  position: relative;
+  /* Позволяет позиционировать псевдоэлемент относительно родителя */
+  display: flex;
+  /* Используем flexbox */
+  align-items: center;
+  /* Центрирование по горизонтали */
+  justify-content: center;
+  /* Центрирование по вертикали */
+  height: 800px;
+  /* Высота блока будет равна высоте окна браузера */
+  background-image: url(Fon4.jpg);
+  background-size: cover;
+  /* Сделаем изображение фонового размера */
+  overflow: hidden;
+  /* Скрыть всё, что выходит за границы блока */
+  
+  
+}
+
+/* Псевдоэлемент для полупрозрачного фона */
+.parent-Block::before {
+  content: "";
+  /* Необходимо для добавления псевдоэлемента */
+  position: absolute;
+  /* Позиционируем его абсолютно */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Занимает всю область родителя */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Полупрозрачный черный фон */
+  z-index: 2;
+  /* Устанавливаем на уровень выше изображения */
+}
+
+
+
+.window-Block {
+  display: flex;
+  /* Используем flexbox */
+  flex-direction: column;
+  /* Для вертикального расположения элементов */
+  align-items: center;
+  /* Центрирование по горизонтали */
+  justify-content: center;
+  /* Центрирование по вертикали */
+  max-width: 1400px;
+  /* Ширина блока, чтобы текст не был слишком широким */
+  height: 600px;
+  /* Высота блока для наглядности */
+
+  width: 100vw;
+  /* Отступы внутри блока */
+  text-align: center;
+  /* Центрирование текста внутри элементов */
+  position: relative;
+  /* Обеспечиваем свою позицию для корректного наложения на псевдоэлемент */
+  z-index: 2;
+  /* Устанавливаем этот элемент выше псевдоэлемента */
+}
+
+
+.window-Block a {
+  font-size: 70px;
+  font-weight: 650;
+
+}
+
+.window-Block h2 {
+  font-size: 43px;
+}
+
+.window-Block h3 {
+  font-size: 35px;
+}
+
+.b2 {
+  height: 55px;
+  width: 300px;
+  border-radius: 10px;
+  background: red;
+  border: none;
+  color: white;
+  font-weight: 800;
+  font-size: 20px;
+  margin-left: auto;
+}
+
+.b2:hover {
+
+  background: red;
+  filter: drop-shadow(0px 0px 20px white);
+  color: white;
+}
+
+.b4 {
+  height: 45px;
+  width: 250px;
+  border-radius: 10px;
+  background: #2561f9;
+  border: none;
+  color: white;
+  font-weight: 800;
+  font-size: 13px;
+  margin-left: auto;
+}
+
+.b4:hover {
+
+  background: #2561f9;
+  filter: drop-shadow(0px 0px 20px white);
+  color: white;
+}
+
+/* 2 БЛОК */
+
+.service-block {
+  background-color: white;
+  /* Цвет фона для блока */
+  color: black;
+  /* Цвет текста */
+  padding: 1%;
+  /* Внутренние отступы */
+  width: 1400px;
+  /* Ширина блока */
+  max-width: 1500px;
+  /* Максимальная ширина блока */
+  text-align: center;
+  /* Центрирование текста */
+  height: 800px;
+  
+  display: flex;
+  /* Используем flexbox для центрирования */
+  justify-content: center;
+  /* Центрируем кнопки по горизонтали */
+  flex-direction: column;
+  /* Располагаем кнопки в колонку */
+  align-items: center;
+  /* Центрируем кнопки по вертикали */
+  
+  
+}
+
+.iphone,
+.and,
+.Not {
+  height: 65px;
+  /* Высота кнопок */
+  width: 250px;
+  /* Ширина кнопок */
+  border-radius: 10px;
+  /* Закругление краёв кнопок */
+  background: #5285fd;
+  /* Цвет фона кнопок */
+  border: none;
+  /* Убираем рамку */
+  color: white;
+  /* Цвет текста кнопок */
+  font-weight: 800;
+  /* Жирный текст */
+  font-size: 20px;
+  /* Размер шрифта */
+  margin: 5px 10px;
+  /* Отступ сверху и снизу между кнопками (5px) */
+  transition: color 0.3s; /* Плавный переход цвета при наведении */
+  cursor: pointer;
+  outline: none;
+}
+.remont-block h1 {
+  font-size: 60px;
+}
+.remont-block h2 {
+  font-size: 52px;
+  margin-top: 20px;
+}
+
+
+.Not:hover {
+  background-color: #2561f9;
+}
+
+.iphone:hover {
+  background-color: #2561f9;
+}
+
+.and:hover {
+  background-color: #2561f9;
+}
+
+.IP {
+
+  font-size: 25px;
+  border-collapse: separate;
+  border-spacing: 70px 40px;
+  text-align: left;
+  margin: auto;
+}
+
+.b3 {
+  height: 55px;
+  /* Высота кнопки */
+  width: 300px;
+  /* Ширина кнопки */
+  border-radius: 10px;
+  /* Закругление краёв кнопки */
+  background: red;
+  /* Цвет фона кнопки */
+  border: none;
+  /* Убираем рамку */
+  color: white;
+  /* Цвет текста кнопки */
+  font-weight: 800;
+  /* Жирный текст */
+  font-size: 20px;
+  /* Размер шрифта */
+  margin: 0;
+  /* Убираем отступы */
+  margin-bottom: 30px;
+  transition: color 0.3s; /* Плавный переход цвета при наведении */
+  cursor: pointer;
+  outline: none;
+}
+
+.b3:hover {
+  background-color: rgba(255, 5, 5, 0.77);
+}
+
+
+/* 3 БЛОК */
+
+
+
+/* 4 БЛОК */
+
+.PL {
+  background-color: white;
+  /* Цвет фона для блока */
+  color: black;
+  /* Цвет текста */
+  width: 100vw;
+  /* Ширина блока */
+  max-width: 1500px;
+  /* Максимальная ширина блока */
+  height: 800px;
+  text-align: center;
+  align-items: center; /* Центрируем элементы по горизонтали */
+  justify-content: center; /* Центрируем элементы по вертикали */
+}
+
+.PL h1 {
+  font-weight: 900;
+}
+
+.IP1 {
+
+  font-size: 30px;
+  border-collapse: separate;
+  border-spacing: 20px 40px;
+  text-align: center;
+  margin: auto;
+  font-weight: 600;
+}
+
+.image1 {
+  height: 620px;
+  width: 550px;
+  box-shadow: white;
+  margin-top: 60px;
+}
+
+
+/* 5 БЛОК */
+
+.Maps {
+  background-color: #5285fd; /* Цвет фона для блока */
+  color: white; /* Цвет текста */
+  padding: 1%; /* Внутренние отступы */
+  width: 100%; /* Ширина блока */
+  max-width: 1500px; /* Максимальная ширина блока */
+  text-align: center; /* Центрирование текста */
+  height: 800px;
+  max-height: 2000px;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+  align-items: center; /* Центрируем элементы по горизонтали */
+  justify-content: center; /* Центрируем элементы по вертикали */
+  background-size: cover;
+  bottom: 0;
+  position: relative;
+  list-style-type:  none;
+  
+  box-sizing: border-box;
+}
+
+.Map .h1 {
+  color: white;
+}
+
+.Map-wrapper {
+  flex: 1;
+  /* Каждой карте назначаем равное пространство */
+  margin: 0 10px;
+  /* Отступы между картами */
+  
+  margin-top: 20px;
+}
+
+.Map-wrapper .Tex1 {
+  text-align: center;
+  /* Центрируем текст над картой */
+  margin-bottom: 10px;
+  /* Отступ снизу текста */
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 20px;
+ 
+}
+.Tex1 a {
+  text-decoration: none;
+  color: white;
+  
+}
+
+.Map-wrapper .Tex2 {
+  text-align: center;
+  /* Центрируем текст над картой */
+  margin-bottom: 10px;
+  /* Отступ снизу текста */
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+.Tex2 a {
+  text-decoration: none;
+  color: white;
+  
+}
+
+.Maps-container {
+  display: flex;
+  /* Используем flexbox для размещения карт */
+  justify-content: space-between;
+  /* Распределяем пространство между картами */
+  margin: 20px 0;
+  /* Отступы между картами */
+  width: 400;
+  height: 200;
+}
+
+
+
+
+
+
+
+/* КНОПКИ ПОД КАРТАМИ */
+
+.b5 {
+  height: 45px;
+  width: 250px;
+  border-radius: 10px;
+  background: red;
+  border: none;
+  color: white;
+  font-weight: 800;
+  font-size: 13px;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+.b5:hover {
+
+  
+  filter: drop-shadow(0px 0px 20px white);
+  color: white;
+
+}
+
+.b6 {
+
+  height: 45px;
+  width: 250px;
+  border-radius: 10px;
+  background: red;
+  border: none;
+  color: white;
+  font-weight: 800;
+  font-size: 13px;
+  place-items: center;
+  margin-top: 20px;
+}
+
+.b6:hover {
+
+  
+  filter: drop-shadow(0px 0px 20px white);
+  color: white;
+}
+
+
+
+
+/* 6 БЛОК */
+
+.OTZ {
+  
+  color: black;
+  /* Цвет текста */
+  padding: 1%;
+  /* Внутренние отступы */
+  width: 100vw;
+  /* Ширина блока */
+  max-width: 1500px;
+  /* Максимальная ширина блока */
+  text-align: center;
+  /* Центрирование текста */
+  height: 1000px;
+
+  display: grid;
+  place-items: center;
+  
+}
+
+.OTZ h1 {
+  font-size: 60px;
+}
+
+
+
+
+.remont-block {
+  background-color: #5285fd;
+  /* Цвет фона для блока */
+  color: white;
+  /* Цвет текста */
+  padding: 1%;
+  /* Внутренние отступы */
+  width: 100vw;
+  /* Ширина блока */
+  max-width: 1500px;
+  /* Максимальная ширина блока */
+  justify-content: space-between;
+  /* Разделение пространства между изображениями */
+  max-height: 2000px;
+  height: 800px;
+  border-radius: 20px;
+  display: flex;
+  text-align: center;
+}
+
+
+
+.remont-block h1 {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  position: absolute;
+  font-weight: 800;
+}
+.remont-block h2 {
+  display: flex;
+  margin-left: 15px;
+  position: absolute;
+  font-weight: 800;
+  margin-top: 100px;
+}
+
+
+
+
+
+
+.Foto {
+  align-items: left;
+  align-items: center; /* Центрируем элементы по горизонтали */
+  justify-content: center; /* Центрируем элементы по вертикали */
+  position: relative;
+}
+
+.image2 {
+  height: 500px;
+  width: 400px;
+  box-shadow: white;
+  margin-top: 140px;
+  border-radius: 30px;
+  margin-left: 30px;
+}
+
+.Foto a {
+  align-items: center;
+  margin-top: 10px;
+}
+
+
+.post-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
+}
+
+.post {
+  flex: 1; /* Каждый пост занимает равное пространство */
+  max-height: 500px;
+  max-width: 380px;
+  margin: 20px; /* Отступы между постами */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  margin-top: 200px;
+}
+
+.post:hover {
+  transform: scale(1.02);
+}
+
+
+
+
+
+
+
+
+.post-image {
+  height: 500px;
+  width: 380px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* АДАПТИВ */
+
+@media (max-width: 1200px) {
+
+  .header {
+    height: 40px;
+
+    margin: 0 0;
+  }
+
+  .header a {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .header b {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .btn {
+    padding: 8px 20px;
+    /* уменьшенные отступы */
+    font-size: 14px;
+    /* уменьшенный размер текста */
+    height: 35px;
+    width: 130px;
+  }
+
+  .window-Block a {
+    font-size: 55px;
+    font-weight: 550;
+
+  }
+
+  .window-Block h2 {
+    font-size: 35px;
+  }
+
+  .window-Block h3 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 1050px) {
+
+  .header {
+    height: 20px;
+    display: flex;
+  }
+
+  
+
+
+  .btn {
+    padding: 6px 10px;
+    /* еще более уменьшенные отступы */
+    font-size: 10px;
+    /* еще более уменьшенный размер текста */
+    height: 25px;
+    width: 120px;
+  }
+
+  .window-Block a {
+    font-size: 45px;
+    font-weight: 550;
+
+  }
+
+  .window-Block h2 {
+    font-size: 25px;
+  }
+
+  .window-Block h3 {
+    font-size: 15px;
+  }
+}
+
