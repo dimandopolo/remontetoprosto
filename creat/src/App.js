@@ -4,7 +4,7 @@ import Footer from './Footer';
 import './media.css'
 import './media2.css'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [buttonText, setButtonText] = useState("Ремонт iPhone");
