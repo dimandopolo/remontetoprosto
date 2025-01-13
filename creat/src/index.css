@@ -1,10 +1,14 @@
+
+
+
 body {
   margin: 0;
   font-family: "Onest", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+  color: #FFFFF0;
   box-sizing: border-box;
+  align-items: center;
 }
 
 code {
@@ -26,6 +30,19 @@ code {
   transition: transform 0.2s;
 }
 .button-style:hover {
+  transform: scale(1.02);
+}
+
+.button-style1 {
+  border-radius: 20px;
+  
+  width: 500px;
+  height: 70px;
+  color: black;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+.button-style1:hover {
   transform: scale(1.02);
 }
 
@@ -54,6 +71,7 @@ header {
   transition: color 0.3s; /* Плавный переход цвета при наведении */
   cursor: pointer;
   margin-top: 20px;
+  
 }
 
 header a:hover {
@@ -118,13 +136,11 @@ header a:hover {
   align-items: center;
   /* Центрирование по горизонтали */
   justify-content: center;
-  /* Центрирование по вертикали */
-  max-width: 1400px;
-  /* Ширина блока, чтобы текст не был слишком широким */
+  
   height: 600px;
   /* Высота блока для наглядности */
 
-  width: 100vw;
+  width: auto;
   /* Отступы внутри блока */
   text-align: center;
   /* Центрирование текста внутри элементов */
@@ -138,7 +154,6 @@ header a:hover {
 .window-Block a {
   font-size: 70px;
   font-weight: 650;
-
 }
 
 .window-Block h2 {
@@ -196,10 +211,8 @@ header a:hover {
   /* Цвет текста */
   padding: 1%;
   /* Внутренние отступы */
-  width: 1400px;
-  /* Ширина блока */
-  max-width: 1500px;
-  /* Максимальная ширина блока */
+  width: auto;
+  
   text-align: center;
   /* Центрирование текста */
   height: 800px;
@@ -312,9 +325,9 @@ header a:hover {
   /* Цвет фона для блока */
   color: black;
   /* Цвет текста */
-  width: 100vw;
+  width: auto;
   /* Ширина блока */
-  max-width: 1500px;
+ 
   /* Максимальная ширина блока */
   height: 800px;
   text-align: center;
@@ -350,8 +363,8 @@ header a:hover {
   background-color: #5285fd; /* Цвет фона для блока */
   color: white; /* Цвет текста */
   padding: 1%; /* Внутренние отступы */
-  width: 100%; /* Ширина блока */
-  max-width: 1500px; /* Максимальная ширина блока */
+  width: auto; /* Ширина блока */
+  
   text-align: center; /* Центрирование текста */
   height: 800px;
   max-height: 2000px;
@@ -375,10 +388,10 @@ header a:hover {
 .Map-wrapper {
   flex: 1;
   /* Каждой карте назначаем равное пространство */
-  margin: 0 10px;
+  margin: 0px 80px;
   /* Отступы между картами */
   
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .Map-wrapper .Tex1 {
@@ -484,9 +497,9 @@ header a:hover {
   /* Цвет текста */
   padding: 1%;
   /* Внутренние отступы */
-  width: 100vw;
+  width: auto;
   /* Ширина блока */
-  max-width: 1500px;
+  
   /* Максимальная ширина блока */
   text-align: center;
   /* Центрирование текста */
@@ -511,13 +524,11 @@ header a:hover {
   /* Цвет текста */
   padding: 1%;
   /* Внутренние отступы */
-  width: 100vw;
-  /* Ширина блока */
-  max-width: 1500px;
-  /* Максимальная ширина блока */
+  width: auto;
+ 
   justify-content: space-between;
   /* Разделение пространства между изображениями */
-  max-height: 2000px;
+  
   height: 800px;
   border-radius: 20px;
   display: flex;
@@ -625,9 +636,7 @@ header a:hover {
 @media (max-width: 1200px) {
 
   .header {
-    height: 40px;
-
-    margin: 0 0;
+    height: 30px;
   }
 
   .header a {
@@ -662,6 +671,145 @@ header a:hover {
   .window-Block h3 {
     font-size: 25px;
   }
+
+
+
+  /* Первый блок */
+  .parent-Block {
+    width: auto;
+}
+
+.window-Block {
+    width: auto;
+}
+
+.window-Block a {
+ 
+}
+
+.window-Block h2{
+
+}
+
+.window-Block h3 {
+
+}
+.b2 {
+
+}
+.b4 {
+
+}
+
+/* Второй блок */
+
+.service-block {
+    width: auto;
+    
+
+}
+
+.service-block h1 {
+    
+}
+
+
+.IP {
+    
+}
+
+.iphone,
+.and,
+.Not {
+height: 30px;    
+width: 110px;
+font-size: 10px;
+margin: 5px 5px;
+}
+
+.b3 {
+    font-size: 15px;
+    height: 40px;
+    width: 250px;
+
+}
+
+.remont-block {
+
+}
+.post {
+ 
+}
+
+
+
+
+/* Третий блок */
+
+.remont-block {
+  width: auto;
+}
+.remont-block h1 {
+    
+}
+.remont-block h2 {
+    
+}
+.post {
+   
+}
+
+
+/* Четвертый блок */
+
+.PL {
+      width: auto;
+      
+}
+.PL h1{
+   
+}
+
+.button-style {
+    
+}
+.image1 {
+    
+}
+
+/* Пятый блок */
+
+.Maps {
+    
+    width: auto;
+    
+
+}
+
+.Map-wrapper {
+    
+    width: auto;
+    
+    
+}
+.Maps-conteiner {
+    
+    
+}
+
+/* Шестой блок */
+
+.OTZ {
+  width: auto;
+
+}
+
+.OTZ h1 {
+    
+}
+.footer {
+  width: auto;
+}
 }
 
 @media (max-width: 1050px) {
@@ -696,5 +844,21 @@ header a:hover {
   .window-Block h3 {
     font-size: 15px;
   }
+
+  
 }
 
+@media (max-width: 1050px) {
+
+
+}
+@media only screen and (min-width: 2000px) { 
+  
+  html { zoom: 200% };
+
+  .window-Block h2 {
+    width: 200%;
+  }
+
+
+}

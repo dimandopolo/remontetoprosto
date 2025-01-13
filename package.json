@@ -2,7 +2,9 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "master": "^1.0.9",
+    "react": "^19.0.0",
     "react-bootstrap": "^2.10.5",
-    "react-router": "^6.28.0"
+    "react-router": "^6.28.0",
+    "react-router-dom": "^7.1.1"
   }
 }

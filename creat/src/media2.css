@@ -13,7 +13,8 @@
    }
 
    .window-Block a {
-    font-size: 35px;
+     
+    font-size: 30px;
    }
 
    .window-Block h2{
@@ -68,6 +69,15 @@
 
    }
 
+   .remont-block {
+     height: 2200px;
+     width: auto;
+   }
+   .post {
+     height: 250px;
+     width: 370px;
+   }
+
 
 
 
@@ -91,7 +101,8 @@
    /* Четвертый блок */
 
     .PL {
-
+          width: auto;
+          margin-bottom: -100px;
     }
     .PL h1{
        font-size: 25px; 
@@ -101,28 +112,31 @@
         font-size: 20px;
     }
     .image1 {
-        width: 450px;
-        height: 600px;
+        width: 320px;
+        height: 450px;
     }
 
    /* Пятый блок */
     
     .Maps {
-        height: 85em;
+        height:1400px;
+        width: auto;
+        
+
     }
 
     .Map-wrapper {
-        margin-top: 50vw;
+        
         flex: 1px;
-        margin: 20em 30em;
-        margin-top: 20px;
-        width: 180%;
-        height: 100%;
+        margin: 100px 10px;
+        width: auto;
+        
         
     }
     .Maps-conteiner {
-        
-        margin-top:100px ;
+        margin-top:20px ;
+        width: 180%;
+        height: 70%;
     }
 
    /* Шестой блок */

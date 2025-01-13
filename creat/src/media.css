@@ -22,6 +22,12 @@
     .parent-Block {
       align-items: center;
     }
+
+    .window-Block a {
+     margin-top: 40px;
+     font-size: 50px;
+  
+    }
   
     /* 3 БЛОК */
   
@@ -30,7 +36,7 @@
     /* Цвет фона для блока */
     color: black;
     /* Цвет текста */
-    max-width: 1500px;
+    
     /* Внутренние отступы */
     width: auto;
     /* Ширина блока */
@@ -109,44 +115,21 @@
   /* КАРТЫ  */
   
   .Maps {
-    height: 1200px;
-    width: 100%;
-    /* Ширина блока */
-    max-width: 1500px;
-    /* Максимальная ширина блока */
-    justify-content: space-between;
-    /* Разделение пространства между изображениями */
-    
-    
-    align-items: center;
-    border-radius: 20px;
+    height: 1400px;
+    width: auto;
     
   }
   
   .Map-wrapper {
-    flex: 1;
-    /* Каждой карте назначаем равное пространство */
-    margin: 0 20px;
-    /* Отступы между картами */
-    width: 400;
-    height: 200;
+    width: auto;
+    margin: 170px 110px;
+    margin-top: 100px;
   }
   
-  
-  
-  
   .Maps-container {
-    display: flex;
-    /* Используем flexbox для размещения карт */
-    justify-content: space-between;
-    /* Распределяем пространство между картами */
-    margin: 20px 0;
-    /* Отступы между картами */
-    flex-direction: column; /* Изменяем направление на вертикальное для мобильных устройств */
-        align-items: center;
-        margin-left: 25%;
-        width: 50%;
-    height: 50%;
+    flex-direction: column;    
+    width: 100%;
+    height: 30%; 
     
   }
   
@@ -155,17 +138,44 @@
   }
   
   .remont-block {
-    flex-direction: column; /* Вертикальное расположение */
-    align-items: center; /* Центрируем посты по горизонтали */
-    height: 1800px;
-    
+    height: 2000px;
+    width: auto;
     justify-content: space-between;
+    flex-direction: column; 
+    align-items: center;
   }
   .post {
-    margin-top: 150px;
+    margin-top: 200px;
     
   }
   }
+
+  @media (max-width: 950px) { 
+
+    .Maps {
+      height: 1400px;
+      width: auto;
+    }
+    .Map-wrapper {
+      width: auto;
+      margin: 170px 190px;
+      margin-top: 100px;
+    }
+
+    .Maps-container {
+      flex-direction: column; 
+    width: 100%;
+    height: 20%;
+    }
+    .post {
+      height: 600px;
+      width: 1000px;
+      justify-content: space-between;
+    flex-direction: column; 
+    align-items: center;
+    }
+    
+}
   
   
  

@@ -5,6 +5,7 @@ import './media.css'
 import './media2.css'
 
 
+
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [buttonText, setButtonText] = useState("Ремонт iPhone");
@@ -178,7 +179,7 @@ function App() {
             <div className='Tex1'>
 
               <li>ТРК Континент, Ленина, 83</li>
-              <a href="tel:8(982)348-81-59">Тел: +7(912) 311-72-76</a>
+              <a href="tel:8(912)311-72-76">Тел: +7(912) 311-72-76</a>
 
             </div>
 
@@ -196,7 +197,7 @@ function App() {
 
             <div className='Tex2'>
               <li>ул. Калинина, 21</li>
-              <a href="tel:8(982)348-81-59">Тел: +7(982) 366-92-17</a>
+              <a href="tel:8(982) 366-92-17">Тел: +7(982) 366-92-17</a>
 
             </div>
 
@@ -204,7 +205,7 @@ function App() {
 
             <a href="https://yandex.ru/maps/-/CHAWrGZD" target="_blank" rel="noopener noreferrer">
 
-              <button className='b6'>ПОСТРОИТЬ МАРШРУТ В СЕРВИС</button>
+              <button className='b5'>ПОСТРОИТЬ МАРШРУТ В СЕРВИС</button>
 
             </a>
 
