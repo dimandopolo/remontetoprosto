@@ -76,7 +76,21 @@
     
 }
 
-@media (max-width: 950px) { 
+@media (min-width: 950px) { 
+
+    .footer {
+        height: auto
+    }
+    
+    .Foot {
+        text-align: center;
+        align-items: center;
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+    
+}
+@media (max-width: 500px) { 
 
     .footer {
         height: auto

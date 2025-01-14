@@ -30,7 +30,7 @@
     margin-top: 50px;
    }
    .b4 {
-    margin-top: 50px;
+    margin-top: 0px;
    }
 
    /* Второй блок */
@@ -117,26 +117,29 @@
     }
 
    /* Пятый блок */
+
+   .Maps h1 {
+     margin-bottom: -100px;
+   }
     
     .Maps {
-        height:1400px;
+        height:1300px;
         width: auto;
-        
-
     }
 
     .Map-wrapper {
         
         flex: 1px;
-        margin: 100px 10px;
+        margin: 140px 10px;
         width: auto;
         
         
     }
     .Maps-conteiner {
-        margin-top:20px ;
+        margin-top:-150px ;
         width: 180%;
         height: 70%;
+        
     }
 
    /* Шестой блок */
