@@ -3,7 +3,7 @@ import ModalWindow from './ModalWindow';
 import Footer from './Footer';
 import './media.css'
 import './media2.css'
-
+import './media2k.css'
 
 
 function App() {

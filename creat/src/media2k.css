@@ -1,119 +1,20 @@
-@media (min-width: 2300px) {
+@media (min-width: 1700px) {
+
+   
   
-    .header{
-        height: 20%;
-
+    .PL {
+        margin-top: -400px;
     }
-    .header {
-        display: flex; /* Используем Flexbox для размещения ссылок */
-        gap: 60px; /* Пробел между ссылками */
-        color: #FFFFF0;
-        margin-top: 60px;
-      }
-      
-      .header a {
-        font-size: 40px;
-        font-weight: 800;
-        text-decoration: none; /* Убираем подчеркивание */
-        color: black; /* Цвет текста */
-        transition: color 0.3s; /* Плавный переход цвета при наведении */
-        cursor: pointer;
-        margin-top: 100px;
-      }
-
-    /* Первый блок */
-   .parent-Block {
-        height: 1500px;
-        margin-top: 100px;
-       
-  background-size: cover;
-   }
-
-   .window-Block {
-        height: 1800px;
-   }
-
-   .window-Block a {
-    margin-top: -40px;
-    font-size: 120px;
-   }
-
-   .window-Block h2{
-    font-size: 100px;
-   }
-
-   .window-Block h3 {
-    font-size: 60px;
-   }
-   .b2 {
-    font-size: 40px;
-    height: 90px;
-  width: 700px;
-  border-radius: 20px;
-   }
-   .b4 {
-    font-size: 25px;
-    height: 75px;
-    width: 500px;
-    border-radius: 20px;
-   }
-
-   /* Второй блок */
-
-   .service-block {
-        height: 1000px;
-
-   }
-   .iphone,
-    .and,
-    .Not {
-        height: 90px;
-        width: 350px;
-        font-size: 30px;
-        border-radius: 20px;
-    }
-    
-    
-
-   .service-block h1 {
-        font-size: 55px;
-   }
-   .service-block th {
-        font-size: 50px;
-        margin-top: 100px;
-   }
-
-   .service-block td {
-    font-size: 50px;
-   }
-
-
-   .IP {
-        
-   }
-
-   .iphone,
-   .and,
-   .Not {
-    
-   }
-
-   .b3 {
-        height: 80px;
-        width: 500px;
-        font-size: 30px;
-        border-radius: 20px;
-   }
-
-
-
 
    /* Третий блок */
 
    .remont-block {
-        height: 1000px;
-        width: auto;
-   }
+    position: flex; 
+    margin-top: 400px; 
+    left: 50%;
+    transform: translate(10%, -50%);
+    width: 80%;
+}
    .remont-block h1 {
         
    }
@@ -147,10 +48,13 @@
 
    /* Пятый блок */
     
-    .Maps {
-        width: 2600px;
-        height: 1100px;
-    }
+   .Maps {
+    position: flex; 
+    top: 600px; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 1100px;
+}
 
     .Map-wrapper {
         

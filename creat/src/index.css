@@ -852,13 +852,3 @@ margin: 5px 5px;
 
 
 }
-@media only screen and (min-width: 2000px) { 
-  
-  html { zoom: 200% };
-
-  .window-Block h2 {
-    width: 200%;
-  }
-
-
-}
