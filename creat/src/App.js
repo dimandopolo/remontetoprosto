@@ -72,7 +72,42 @@ function App() {
         </div>
       </div>
 
-
+      <div className='Prem'>
+            
+            <div className='Prem1'>
+              <h2><span style={{ fontSize: '80px' }}>⭐️</span></h2>
+              <h3>Бесплатная диагностика</h3>
+              <ul>
+                <li><a>При отказе от ремонта</a></li>
+                <li><a>БЕСПЛАТНО!</a></li>
+              </ul>
+            </div>
+            <div className='Prem2'>
+            <h2><span style={{ fontSize: '80px' }}>🚀</span></h2>
+              <h3>Быстрый ремонт</h3>
+              <ul>
+                <li><a>Ремонтируем типовые</a></li>
+                <li><a>неисправности от 20 минут</a></li>
+              </ul>
+            </div>
+            <div className='Prem3'>
+            <h2><span style={{ fontSize: '80px' }}>🔥</span></h2>
+              <h3>Реальная гарантия</h3>
+              <ul>
+                <li><a>Минимальная гарантия</a></li>
+                <li><a>от 30 дней!</a></li>
+              </ul>
+            </div>
+            <div className='Prem4'>
+            <h2><span style={{ fontSize: '80px' }}>🔈</span></h2>
+              <h3>Чистка устройства</h3>
+              <ul>
+                <li><a>При ремонте в подарок</a></li>
+                <li><a>чистим сетки динамиков</a></li>
+              </ul>
+            </div>
+            
+      </div>
 
 
       <div className='service-block' draggable='false'>

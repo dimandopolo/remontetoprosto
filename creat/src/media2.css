@@ -52,6 +52,9 @@
         font-size: 13px;
         border-spacing: 30px 30px;
    }
+   .IP td {
+     font-size: 13px;
+   }
 
    .iphone,
    .and,
@@ -152,6 +155,22 @@
 
     .OTZ h1 {
         font-size: 30px;
+    }
+
+    .Prem {
+     flex-direction: column;
+     height: auto;
+     width: auto;
+     margin-top: 0px;
+    }
+    .Prem1 {
+     margin-left: 0px;
+    }
+    .Prem2,
+    .Prem3,
+    .Prem4,
+    .Prem5 {
+     margin-top: -50px;
     }
 
   }
