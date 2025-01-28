@@ -94,5 +94,16 @@
     .OTZ h1 {
         
     }
+    .Prem {
+        
+        align-items: center;
+    }
 
+    .Prem1,
+    .Prem2,
+    .Prem3,
+    .Prem4,
+    .Prem5 {
+        width: 80%;
+    }
   }
