@@ -167,19 +167,45 @@ function App() {
 
 
       <div className='remont-block'>
-        <h1>Ремонт смартфонов</h1><h2>от 20 минут</h2>
+        <h1>Полировка Apple Watch</h1>
               
         
         <div className="post">
-      <img src="Foto4.jpeg" alt="title" className="post-image" />
+        <video
+        autoPlay
+        loop
+        muted
+        style={{ width: '100%', height: 'auto' }}
+      >
+        <source src="Watch12.mp4" type="video/mp4" />
+        Ваш браузер не поддерживает видео.
+      </video>
       
     </div>
     <div className="post">
-      <img src="Fotoser.jpg" alt="title" className="post-image" />
+    <video
+        autoPlay
+        loop
+        muted
+        style={{ width: '100%', height: 'auto' }}
+      >
+        <source src="Watch2.mp4" type="video/mp4" />
+        Ваш браузер не поддерживает видео.
+      </video>
+      
      
     </div>
     <div className="post">
-      <img src="Fotoset2.jpg" alt="title" className="post-image" />
+    <video
+        autoPlay
+        loop
+        muted
+        style={{ width: '100%', height: 'auto' }}
+      >
+        <source src="Watch3.mp4" type="video/mp4" />
+        Ваш браузер не поддерживает видео.
+      </video>
+      
       
     </div>
       </div>
