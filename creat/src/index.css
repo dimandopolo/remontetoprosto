@@ -5,7 +5,6 @@ body {
   margin: 0;
   font-family: 'TT Norms Pro';
   font-weight: 100;
-  font-style: italic;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #FFFFF0;
@@ -19,7 +18,7 @@ code {
 
 .service-block h1 {
   font-size: 52px;
-  font-weight: 650;
+  font-weight: 200;
 }
 .service-block h1 {
   font-size: 52px;
@@ -27,7 +26,7 @@ code {
 }
 .service-block td {
   font-size: 30px;
-  font-weight: 550;
+  font-weight: 500;
 }
 
 .button-style {
@@ -75,7 +74,7 @@ header {
 
 .header a {
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 500;
   text-decoration: none; /* Убираем подчеркивание */
   color: black; /* Цвет текста */
   transition: color 0.3s; /* Плавный переход цвета при наведении */
@@ -163,15 +162,17 @@ header a:hover {
 
 .window-Block a {
   font-size: 70px;
-  font-weight: 650;
+  font-weight: 500;
 }
 
 .window-Block h2 {
   font-size: 43px;
+  font-weight: 200;
 }
 
 .window-Block h3 {
   font-size: 35px;
+  font-weight: 300;
 }
 
 .b2 {
@@ -181,8 +182,8 @@ header a:hover {
   background: red;
   border: none;
   color: white;
-  font-weight: 800;
-  font-size: 20px;
+  font-weight: 500;
+  font-size: 18px;
   margin-left: auto;
 }
 
@@ -200,7 +201,7 @@ header a:hover {
   background: #2561f9;
   border: none;
   color: white;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 13px;
   margin-left: auto;
 }
@@ -254,7 +255,7 @@ header a:hover {
   /* Убираем рамку */
   color: white;
   /* Цвет текста кнопок */
-  font-weight: 800;
+  font-weight: 600;
   /* Жирный текст */
   font-size: 20px;
   /* Размер шрифта */
@@ -265,11 +266,12 @@ header a:hover {
   outline: none;
 }
 .remont-block h1 {
-  font-size: 60px;
+  font-size: 52px;
+  font-weight: 200;
 }
 .remont-block h2 {
   font-size: 52px;
-  margin-top: 20px;
+  margin-top: px;
 }
 
 
@@ -307,7 +309,7 @@ header a:hover {
   /* Убираем рамку */
   color: white;
   /* Цвет текста кнопки */
-  font-weight: 800;
+  font-weight: 500;
   /* Жирный текст */
   font-size: 20px;
   /* Размер шрифта */
@@ -346,7 +348,8 @@ header a:hover {
 }
 
 .PL h1 {
-  font-weight: 900;
+  font-size: 40px;
+  font-weight: 600;
 }
 
 .IP1 {
@@ -370,7 +373,7 @@ header a:hover {
 /* 5 БЛОК */
 
 .Maps {
-  background-color: #5285fd; /* Цвет фона для блока */
+  background-color: #2561f9; /* Цвет фона для блока */
   color: white; /* Цвет текста */
   padding: 1%; /* Внутренние отступы */
   width: auto; /* Ширина блока */
@@ -522,13 +525,14 @@ header a:hover {
 
 .OTZ h1 {
   font-size: 60px;
+  font-weight: 500;
 }
 
 
 
 
 .remont-block {
-  background-color: #5285fd;
+  background-color: #2561f9;
   /* Цвет фона для блока */
   color: white;
   /* Цвет текста */
@@ -655,6 +659,8 @@ header a:hover {
 }
 .Prem a {
   margin-left: -30px;
+  
+  font-weight: 400;
 }
 
 
