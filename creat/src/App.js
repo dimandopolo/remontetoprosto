@@ -1,15 +1,126 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ModalWindow from './ModalWindow';
 import Footer from './Footer';
-import './media.css'
-import './media2.css'
-import './media2k.css'
+import './media.css';
+import './media2.css';
+import './media2k.css';
+import MetaTags from './MetaTags';
 
+const services = [
+  {
+    title: "Полировка Apple Watch в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Профессиональная полировка Apple Watch в Магнитогорске! Уберем даже самые глубокие царапины от 2000р. Выполним работу до 2-х часов.",
+  },
+  {
+    title: "Ремонт iPhone в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Профессиональный ремонт вашего устройства. Комплектующие класса Orig. Гарантия от 90 дней! Выполним ремонт в день обращения.",
+  },
+  {
+    title: "Ремонт iPad в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Профессиональный ремонт вашего устройства. Комплектующие класса Orig. Гарантия от 90 дней! Выполним ремонт в день обращения.",
+  },
+  {
+    title: "Ремонт Macbook в Магнитогорске ",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Профессиональный ремонт вашего устройства. Комплектующие класса Orig. Гарантия от 90 дней!",
+  },
+  {
+    title: "Срочный ремонт смартфона в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "РЕМОНТ ЭТО ПРОСТО - Сервизный центр в Магнитогорске!",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "Ремонт Samsung в Магнитогорске ",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "Ремонт Xiaomi в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "Ремонт Redmi в Магнитогорске ",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "Ремонт Realme в Магнитогорске ",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "Ремонт Tecno в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "Ремонт Infinix в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "Ремонт Poco в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "Ремонт Honor в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "Ремонт Huawei в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "Ремонт Android  в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "Замена разъема зарядки  в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "Замена дисплея в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "Замена дисплейного модуля  в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "Замена дисплея в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "Замена стекла iPhone  в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 90 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  {
+    title: "Гидрогелевая пленка на смартфон  в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Используем качественные расходные материалы. Защита устройства высочайшего качества. С гарантией на отклеивание!",
+  },
+  {
+    title: "Стекло Remax для iPhone в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Используем качественные расходные материалы. Защита устройства высочайшего качества. С гарантией на отклеивание!",
+  },
+  {
+    title: "Замена аккумулятора в Магнитогорске",
+    description: "Сервисный центр РЕМОНТ ЭТО ПРОСТО! Выполним ремонт в день обращения. Гарантия от 30 дней. Профессиональный ремонт. Комплектующие класса Orig.",
+  },
+  
+];
 
 function App() {
+  const [currentService, setCurrentService] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [buttonText, setButtonText] = useState("Ремонт iPhone");
   const [activeService, setActiveService] = useState("Ремонт iPhone"); // Устанавливаем по умолчанию "Ремонт iPhone"
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentService((prev) => (prev + 1) % services.length);
+    }, 10000); // Меняем услугу каждые 10 секунд
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const { title, description } = services[currentService];
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -31,28 +142,23 @@ function App() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
 
   return (
     <div>
+      <MetaTags title={title} description={description} />
       <header>
         <div className='header a'>
           <div>
-            <a href='#Map'  onClick={(e) => { e.preventDefault(); smoothScroll('#Map'); } }> Контакты </a>
+            <a href='#Map' onClick={(e) => { e.preventDefault(); smoothScroll('#Map'); }}> Контакты </a>
           </div>
           <div>
-            <a href='#Price'  onClick={(e) => { e.preventDefault(); smoothScroll('#Price'); } }>Цены</a>
+            <a href='#Price' onClick={(e) => { e.preventDefault(); smoothScroll('#Price'); }}>Цены</a>
           </div>
           <div>
-            <a href='#OTZ' onClick={(e) => { e.preventDefault(); smoothScroll('#OTZ'); } }>Отзывы</a>
+            <a href='#OTZ' onClick={(e) => { e.preventDefault(); smoothScroll('#OTZ'); }}>Отзывы</a>
           </div>
-
-
         </div>
       </header>
-
-
-
 
       <div className="parent-Block">
         <div className="window-Block">
@@ -73,215 +179,157 @@ function App() {
       </div>
 
       <div className='Prem'>
-  <div className='Prem1'>
-    <h2>
-      <img src="AM1.png" alt="Бесплатная диагностика" style={{ width: '100px', height: '100px' }} />
-    </h2>
-    <h3>Бесплатная диагностика</h3>
-    <ul>
-      <li><a>При отказе от ремонта</a></li>
-      <li><a>БЕСПЛАТНО!</a></li>
-    </ul>
-  </div>
-  <div className='Prem2'>
-    <h2>
-      <img src="AM2.png" alt="Быстрый ремонт" style={{ width: '100px', height: '100px' }} />
-    </h2>
-    <h3>Быстрый ремонт</h3>
-    <ul>
-      <li><a>Ремонтируем типовые</a></li>
-      <li><a>неисправности от 20 минут</a></li>
-    </ul>
-  </div>
-  <div className='Prem3'>
-    <h2>
-      <img src="AM3.png" alt="Реальная гарантия" style={{ width: '100px', height: '100px' }} />
-    </h2>
-    <h3>Реальная гарантия</h3>
-    <ul>
-      <li><a>Минимальная гарантия</a></li>
-      <li><a>от 30 дней!</a></li>
-    </ul>
-  </div>
-  <div className='Prem4'>
-    <h2>
-      <img src="AM4.png" alt="Чистка устройства" style={{ width: '100px', height: '100px' }} />
-    </h2>
-    <h3>Чистка устройства</h3>
-    <ul>
-      <li><a>При ремонте чистим</a></li>
-      <li><a>сетки динамиков в подарок</a></li>
-    </ul>
-  </div>
-</div>
-
-
-      <div className='service-block' draggable='false'>
-      <h1 id='Price' >Сколько стоит ремонт?</h1>
-
-      <div style={{ display: 'flex' }}>
-        <button 
-          style={{ float: 'right', backgroundColor: activeService === "Ремонт iPhone" ? '#2561f9' : '' }} 
-          className="iphone" 
-          type="button"
-          onClick={() => setActiveService("Ремонт iPhone")}
-        >
-          <span>Ремонт iPhone</span>
-        </button>
-        <button className="and" type="button" onClick={() => handleButtonClick("Ремонт Android")}>
-          Ремонт Android
-        </button>
-        <button className="Not" type="button" onClick={() => handleButtonClick("Ремонт Ноутбука")}>
-          Ремонт Ноутбука
-        </button>
+        <div className='Prem1'>
+          <h2>
+            <img src="AM1.png" alt="Бесплатная диагностика" style={{ width: '100px', height: '100px' }} />
+          </h2>
+          <h3>Бесплатная диагностика</h3>
+          <ul>
+            <li><a>При отказе от ремонта</a></li>
+            <li><a>БЕСПЛАТНО!</a></li>
+          </ul>
+        </div>
+        <div className='Prem2'>
+          <h2>
+            <img src="AM2.png" alt="Быстрый ремонт" style={{ width: '100px', height: '100px' }} />
+          </h2>
+          <h3>Быстрый ремонт</h3>
+          <ul>
+            <li><a>Ремонтируем типовые</a></li>
+            <li><a>неисправности от 20 минут</a></li>
+          </ul>
+        </div>
+        <div className='Prem3'>
+          <h2>
+            <img src="AM3.png" alt="Реальная гарантия" style={{ width: '100px', height: '100px' }} />
+          </h2>
+          <h3>Реальная гарантия</h3>
+          <ul>
+            <li><a>Минимальная гарантия</a></li>
+            <li><a>от 30 дней!</a></li>
+          </ul>
+        </div>
+        <div className='Prem4'>
+          <h2>
+            <img src="AM4.png" alt="Чистка устройства" style={{ width: '100px', height: '100px' }} />
+          </h2>
+          <h3>Чистка устройства</h3>
+          <ul>
+            <li><a>При ремонте чистим</a></li>
+            <li><a>сетки динамиков в подарок</a></li>
+          </ul>
+        </div>
       </div>
 
-      {activeService === "Ремонт iPhone" && (
-        <table style={{ listStyle: 'none' }} className='IP'>
-          <tr><th>Услуга</th><th>Гарантия</th><th>Цена</th></tr>
-          <tr><td>Замена дисплейного модуля</td><td>90 дней</td><td>от 1990р</td></tr>
-          <tr><td>Замена аккумулятора</td><td>90 дней</td><td>от 1590р</td></tr>
-          <tr><td>Замена задней крышки</td><td>90 дней</td><td>от 2490р</td></tr>
-          <tr><td>Замена разъема зарядки</td><td>90 дней</td><td>от 1490р</td></tr>
-        </table>
-      )}
-      {activeService === "Ремонт Android" && (
-        <table style={{ listStyle: 'none' }} className='IP'>
-          <tr><th>Услуга</th><th>Гарантия</th><th>Цена</th></tr>
-          <tr><td>Замена дисплейного модуля (ORIG)</td><td>90 дней</td><td>от 2490р</td></tr>
-          <tr><td>Замена разъема зарядки</td><td>90 дней</td><td>от 1490р</td></tr>
-          <tr><td>Замена аккумулятора</td><td>30 дней</td><td>от 1590р</td></tr>
-          
-          <tr><td>Чистка после попадания влаги</td><td>30 дней</td><td>от 1490р</td></tr>
-        </table>
-      )}
-      {activeService === "Ремонт Ноутбука" && (
-        <table style={{ listStyle: 'none' }} className='IP'>
-          <tr><th>Услуга</th><th>Гарантия</th><th>Цена</th></tr>
-          <tr><td>Чистка, замены термопасты</td><td>30 дней</td><td>от 1490р</td></tr>
-          <tr><td>Замена матрицы</td><td>30 дней</td><td>от 2990р</td></tr>
-          <tr><td>Замена аккумулятора</td><td>90 дней</td><td>от 2590р</td></tr>
-          <tr><td>Замена разъема зарядки</td><td>90 дней</td><td>от 1990р</td></tr>
-        </table>
-      )}
-      <a href="https://t.me/remontetoprosto1" target="_blank" rel="noopener noreferrer">
-        <button className='b3'>УЗНАТЬ ЦЕНУ В ТЕЛЕГРАМ</button>
-      </a>
-    </div>
+      {/* Остальной контент вашего сайта */}
+      <div className='service-block' draggable='false'>
+        <h1 id='Price'>Сколько стоит ремонт?</h1>
+        <div style={{ display: 'flex' }}>
+          <button
+            style={{ float: 'right', backgroundColor: activeService === "Ремонт iPhone" ? '#2561f9' : '' }}
+            className="iphone"
+            type="button"
+            onClick={() => setActiveService("Ремонт iPhone")}
+          >
+            <span>Ремонт iPhone</span>
+          </button>
+          <button className="and" type="button" onClick={() => handleButtonClick("Ремонт Android")}>
+            Ремонт Android
+          </button>
+          <button className="Not" type="button" onClick={() => handleButtonClick("Ремонт Ноутбука")}>
+            Ремонт Ноутбука
+          </button>
+        </div>
 
+        {activeService === "Ремонт iPhone" && (
+          <table style={{ listStyle: 'none' }} className='IP'>
+            <tr><th>Услуга</th><th>Гарантия</th><th>Цена</th></tr>
+            <tr><td>Замена дисплейного модуля</td><td>90 дней</td><td>от 1990р</td></tr>
+            <tr><td>Замена аккумулятора</td><td>90 дней</td><td>от 1590р</td></tr>
+            <tr><td>Замена задней крышки</td><td>90 дней</td><td>от 2490р</td></tr>
+            <tr><td>Замена разъема зарядки</td><td>90 дней</td><td>от 1490р</td></tr>
+          </table>
+        )}
+        {activeService === "Ремонт Android" && (
+          <table style={{ listStyle: 'none' }} className='IP'>
+            <tr><th>Услуга</th><th>Гарантия</th><th>Цена</th></tr>
+            <tr><td>Замена дисплейного модуля (ORIG)</td><td>90 дней</td><td>от 2490р</td></tr>
+            <tr><td>Замена разъема зарядки</td><td>90 дней</td><td>от 1490р</td></tr>
+            <tr><td>Замена аккумулятора</td><td>30 дней</td><td>от 1590р</td></tr>
+            <tr><td>Чистка после попадания влаги</td><td>30 дней</td><td>от 1490р</td></tr>
+          </table>
+        )}
+        {activeService === "Ремонт Ноутбука" && (
+          <table style={{ listStyle: 'none' }} className='IP'>
+            <tr><th>Услуга</th><th>Гарантия</th><th>Цена</th></tr>
+            <tr><td>Чистка, замены термопасты</td><td>30 дней</td><td>от 1490р</td></tr>
+            <tr><td>Замена матрицы</td><td>30 дней</td><td>от 2990р</td></tr>
+            <tr><td>Замена аккумулятора</td><td>90 дней</td><td>от 2590р</td></tr>
+            <tr><td>Замена разъема зарядки</td><td>90 дней</td><td>от 1990р</td></tr>
+          </table>
+        )}
+        <a href="https://t.me/remontetoprosto1" target="_blank" rel="noopener noreferrer">
+          <button className='b3'>УЗНАТЬ ЦЕНУ В ТЕЛЕГРАМ</button>
+        </a>
+      </div>
 
-
+      {/* Остальной контент вашего сайта */}
       <div className='remont-block'>
         <h1>Полировка Apple Watch</h1>
-              
-        
         <div className="post">
-        <video
-        autoPlay
-        loop
-        muted
-        style={{ width: '100%', height: 'auto' }}
-      >
-        <source src="Watch12.mp4" type="video/mp4" />
-        Ваш браузер не поддерживает видео.
-      </video>
-      
-    </div>
-    <div className="post">
-    <video
-        autoPlay
-        loop
-        muted
-        style={{ width: '100%', height: 'auto' }}
-      >
-        <source src="Watch2.mp4" type="video/mp4" />
-        Ваш браузер не поддерживает видео.
-      </video>
-      
-     
-    </div>
-    <div className="post">
-    <video
-        autoPlay
-        loop
-        muted
-        style={{ width: '100%', height: 'auto' }}
-      >
-        <source src="Watch3.mp4" type="video/mp4" />
-        Ваш браузер не поддерживает видео.
-      </video>
-      
-      
-    </div>
+          <video autoPlay loop muted style={{ width: '100%', height: 'auto' }}>
+            <source src="Watch12.mp4" type="video/mp4" />
+            Ваш браузер не поддерживает видео.
+          </video>
+        </div>
+        <div className="post">
+          <video autoPlay loop muted style={{ width: '100%', height: 'auto' }}>
+            <source src="Watch2.mp4" type="video/mp4" />
+            Ваш браузер не поддерживает видео.
+          </video>
+        </div>
+        <div className="post">
+          <video autoPlay loop muted style={{ width: '100%', height: 'auto' }}>
+            <source src="Watch3.mp4" type="video/mp4" />
+            Ваш браузер не поддерживает видео.
+          </video>
+        </div>
       </div>
 
-
-
       <div className='PL'>
-
         <h1>ЗАЩИТА УСТРОЙСТВА</h1>
         <table style={{ listStyle: 'none' }} className='IP1'>
-
-          <tr><td class='button-style'>Гидрогелевая пленка - 690р</td></tr>
-          <tr><td class='button-style'>Стекло Remax для iPhone - 790р</td></tr>
-
+          <tr><td className='button-style'>Гидрогелевая пленка - 690р</td></tr>
+          <tr><td className='button-style'>Стекло Remax для iPhone - 790р</td></tr>
         </table>
         <img src="Fot2.jpg" alt="Protection" className="image1" />
       </div>
 
-
-
-
       <div id='Map' className='Maps'>
-
         <h1>Где мы находимся?</h1>
-
         <div className='Maps-container'>
-
-   
-
           <div className='Map-wrapper'>
-
             <div className='Tex1'>
-
               <li>ТРК Континент, Ленина, 83</li>
               <a href="tel:8(912)311-72-76">Тел: +7(912) 311-72-76</a>
-
             </div>
-
             <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=131035859635" width="100%" height="140%" frameBorder="0"></iframe>
-
             <a href="https://yandex.ru/maps/-/CHAWrGZD" target="_blank" rel="noopener noreferrer">
-
               <button className='b5'>ПОСТРОИТЬ МАРШРУТ В СЕРВИС</button>
-
             </a>
-
           </div>
-
           <div className='Map-wrapper'>
-
             <div className='Tex2'>
               <li>ул. Калинина, 21</li>
               <a href="tel:8(982) 366-92-17">Тел: +7(982) 366-92-17</a>
-
             </div>
-
             <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=210842246202" width="100%" height="140%" frameBorder="0"></iframe>
-
             <a href="https://yandex.ru/maps/-/CHAWrGZD" target="_blank" rel="noopener noreferrer">
-
               <button className='b5'>ПОСТРОИТЬ МАРШРУТ В СЕРВИС</button>
-
             </a>
-
           </div>
         </div>
       </div>
-
-
-
-
 
       <div id='OTZ' className='OTZ'>
         <h1>Живые отзывы</h1>
@@ -293,7 +341,6 @@ function App() {
               border: '1px solid #e6e6e6',
               borderRadius: '8px',
               boxSizing: 'border-box'
-              
             }}
             src="https://yandex.ru/maps-reviews-widget/131035859635?comments"
             title="Отзывы о Ремонт это просто"
@@ -326,15 +373,12 @@ function App() {
             Ремонт это просто на карте Магнитогорска — Яндекс Карты
           </a>
         </div>
-        
       </div>
+
       <div>
-          {/* Другие компоненты вашего приложения */}
-          <Footer />
-        </div>
+        <Footer />
+      </div>
     </div>
-
-
   );
 }
 
