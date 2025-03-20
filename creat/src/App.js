@@ -170,10 +170,10 @@ function App() {
           </h2>
 
           <a href="https://t.me/remontetoprosto1" target="_blank" rel="noopener noreferrer">
-            <button className='b2'>УЗНАТЬ ЦЕНУ В ТЕЛЕГРАМ</button>
+            <button className='b2'>Узнать цену в телеграм</button>
           </a>
           <a href="https://yandex.ru/maps/-/CHAWrGZD" target="_blank" rel="noopener noreferrer">
-            <button className='b4'>ПОСТРОИТЬ МАРШРУТ В СЕРВИС</button>
+            <button className='b4'>Построить маршрут в сервис</button>
           </a>
         </div>
       </div>
@@ -225,13 +225,9 @@ function App() {
       <div className='service-block' draggable='false'>
         <h1 id='Price'>Сколько стоит ремонт?</h1>
         <div style={{ display: 'flex' }}>
-          <button
-            style={{ float: 'right', backgroundColor: activeService === "Ремонт iPhone" ? '#2561f9' : '' }}
-            className="iphone"
-            type="button"
-            onClick={() => setActiveService("Ремонт iPhone")}
-          >
-            <span>Ремонт iPhone</span>
+          
+          <button className="iphone" type="button" onClick={() => handleButtonClick("Ремонт iPhone")}>
+            Ремонт iPhone
           </button>
           <button className="and" type="button" onClick={() => handleButtonClick("Ремонт Android")}>
             Ремонт Android
@@ -269,41 +265,113 @@ function App() {
           </table>
         )}
         <a href="https://t.me/remontetoprosto1" target="_blank" rel="noopener noreferrer">
-          <button className='b3'>УЗНАТЬ ЦЕНУ В ТЕЛЕГРАМ</button>
+          <button className='b3'>Узнать цену в телеграм</button>
         </a>
       </div>
+      <div class="containerOrig">
+        
+        <div class="containerOr">
+    
+        <div class="Orig">
+        <h1>Качественные детали</h1>
+        <tr>Дисплеи класса Original</tr>
+        <tr><td>Оригинальное качество изображения, яркость и чувствительности сенсора</td></tr>
+        <tr>Аккумуляторы</tr>
+        <tr><td>От качественных производителей запчастей. Каждый аккумулятор проходит проверку на номинальную еммкость</td></tr>
+        <tr>Шлейфа</tr>
+        <tr><td>Используем только шлейфа полностью соответствуещие стандартам производятелей</td></tr>
+        <tr>Кнопки</tr>
+        <tr><td>Износостойкие кнопки из материалов оригинального производства</td></tr>
 
-      {/* Остальной контент вашего сайта */}
-      <div className='remont-block'>
+        </div>
+
+       
+    
+    
+        <div class="Orig1">
+        <img src="iphone1.png" alt="Protection" className="iphone1" />
+        
+        </div>
+        </div>
+        </div>
+        
+        <div class="Line">
+        
+        <div class="Line1">
+    
+        <div class="Online1">
+        <h1>Есть вопросы или хотите записаться на ремонт?</h1>
+        <a><span class="online-status"></span>
+          Мы онлайн, пишите, звоните</a>
+        </div>
+    
+    
+        <div class="Online2">
+        <a href="tel:8(912)311-72-76" target="_blank" rel="noopener noreferrer">
+            <button className='button2'>Связаться</button>
+          </a>
+        <a href="https://t.me/remontetoprosto1" target="_blank" rel="noopener noreferrer">
+            <button className='button1'>Узнать цену в телеграм</button>
+          </a>
+          </div>
+      </div>
+</div>
+     
+
+      <div class="container">
         <h1>Полировка Apple Watch</h1>
-        <div className="post">
-          <video autoPlay loop muted style={{ width: '100%', height: 'auto' }}>
-            <source src="Watch12.mp4" type="video/mp4" />
-            Ваш браузер не поддерживает видео.
-          </video>
+        <div class="container1">
+    
+        <div class="block">
+        <img src="AP1.jpeg" alt="Protection" className="image5" />
+        <img src="AP2.jpeg" alt="Protection" className="image6" />
         </div>
-        <div className="post">
-          <video autoPlay loop muted style={{ width: '100%', height: 'auto' }}>
-            <source src="Watch2.mp4" type="video/mp4" />
-            Ваш браузер не поддерживает видео.
-          </video>
+    
+    
+        <div class="block1">
+        <p class="text-large">Есть нежелательные царапины?</p>
+      <p class="text-medium">Приведем часы в состояние новых!</p>
+        <tr className='button-styleAP'> Без дорогой замены стекла или дисплея</tr>
+        <tr className='button-styleAP'>Уберем даже самые глубокие царапины</tr>
+        <tr className='button-styleAP'>Снимем всего от 10% до 20% стекла</tr>
+        <tr className='button-styleAP'>Нанесем новое олеофобное покрытие</tr>
+        <tr className='button-styleAP'>Выполним ремонт за 2 часа!</tr>
+        <tr className='button-styleAP'>Полировка Apple Watch от 2000р</tr>
+        <a href="https://t.me/remontetoprosto1" target="_blank" rel="noopener noreferrer">
+        <button className='buttonAP'>Связаться</button>
+        </a>
         </div>
-        <div className="post">
-          <video autoPlay loop muted style={{ width: '100%', height: 'auto' }}>
-            <source src="Watch3.mp4" type="video/mp4" />
-            Ваш браузер не поддерживает видео.
-          </video>
-        </div>
-      </div>
+        
+    
+    </div>
+</div>
+<div class="PL">
+        
+        <div class="containerOr">
+    
+        <div class="IP1">
+        <h1>Защита устройства</h1>
+        <tr>Гидрогелевая пленка - 990р</tr>
+        <tr><td>Пленка изготавливается под каждую конкретную модель.
+     Минимальная толщина покрытия не увеличивает габариты устройства
+      и сохраняет чувствительность экрана.</td></tr>
+        <tr>Стекло Remax для iPhone - 990р</tr>
+        <tr><td>Повышенная прочность. Не скалывается по краям стекла. Качественное олеофобное покрытие.</td></tr>
+        
 
-      <div className='PL'>
-        <h1>ЗАЩИТА УСТРОЙСТВА</h1>
-        <table style={{ listStyle: 'none' }} className='IP1'>
-          <tr><td className='button-style'>Гидрогелевая пленка - 690р</td></tr>
-          <tr><td className='button-style'>Стекло Remax для iPhone - 790р</td></tr>
-        </table>
+        </div>
+
+       
+    
+    
+        <div class="Orig12">
         <img src="Fot2.jpg" alt="Protection" className="image1" />
-      </div>
+        
+        </div>
+        </div>
+        </div>
+
+      
 
       <div id='Map' className='Maps'>
         <h1>Где мы находимся?</h1>
@@ -318,16 +386,7 @@ function App() {
               <button className='b5'>ПОСТРОИТЬ МАРШРУТ В СЕРВИС</button>
             </a>
           </div>
-          <div className='Map-wrapper'>
-            <div className='Tex2'>
-              <li>ул. Калинина, 21</li>
-              <a href="tel:8(982) 366-92-17">Тел: +7(982) 366-92-17</a>
-            </div>
-            <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=210842246202" width="100%" height="140%" frameBorder="0"></iframe>
-            <a href="https://yandex.ru/maps/-/CHAWrGZD" target="_blank" rel="noopener noreferrer">
-              <button className='b5'>ПОСТРОИТЬ МАРШРУТ В СЕРВИС</button>
-            </a>
-          </div>
+          
         </div>
       </div>
 

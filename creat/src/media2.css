@@ -108,6 +108,7 @@
     .PL {
           width: auto;
           margin-bottom: -100px;
+          height: 1000px;
     }
     .PL h1{
        font-size: 22px; 
@@ -119,6 +120,7 @@
         height: 40px;
     }
     .image1 {
+     margin-top: -500px;
         width: 320px;
         height: 450px;
     }
@@ -130,7 +132,7 @@
    }
     
     .Maps {
-        height:1300px;
+        height:700px;
         width: auto;
     }
 
@@ -176,5 +178,71 @@
     .Prem5 {
      margin-top: -50px;
     }
+    .containerOr {
+     flex-direction: column; /* Располагаем элементы вертикально */
+     gap: 20px; /* Уменьшаем отступ между блоками */
+     align-items: center; /* Центрируем элементы по горизонтали */
+   }
+
+   .Orig h1{
+     font-size: 30px;
+   }
+   .Orig tr {
+     font-size: 15px;
+   }
+   .Orig td {
+     font-size: 15px;
+   }
+   .Orig {
+     width: auto;
+     height: 400px;
+     margin-left: 50px;
+   }
+   .iphone1 {
+     margin-top: -20px;
+     width: auto;
+     height: 400px;
+   }
+
+   .Line {
+     margin-top: 0px;
+     height: 400px;
+     flex-direction: column; /* Располагаем элементы вертикально */
+   }
+   .Line1 {
+     flex-direction: column; /* Располагаем элементы вертикально */
+     margin-top: -200px;
+     margin-right: 0px;
+     margin-left: -80px;
+   }
+   .container h1 {
+     font-size: 30px;
+   }
+   .container1 {
+     flex-direction: column; /* Располагаем элементы вертикально */
+   }
+   .block1 {
+     margin-top: -100px;
+   }
+   .image5,
+   .image6 {
+     width: 90%;
+     height: auto;
+   }
+   .IP1 tr {
+     font-size: 16px;
+   }
+   .IP1 td {
+     font-size: 13px;
+   }
+   .IP1 h1 {
+     margin-top: -30px;
+     font-size: 30px;
+   }
+   .IP1 {
+     gap: 10px;
+     width: auto;
+     margin-left: 50px;
+   }
 
   }
