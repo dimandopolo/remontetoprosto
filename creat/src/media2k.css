@@ -26,9 +26,7 @@
     width: auto;
    }
    
-.conteiner {
-    height: 1400px;
-}
+
    /* Четвертый блок */
 
     .PL {
@@ -46,50 +44,10 @@
         border-radius: 50px;
     }
     .image1 {
-       height: 1000px;
+       height: 80%;
        width: 800px;
     }
 
-   /* Пятый блок */
-    
-   .Maps {
-    position: flex; 
-    top: 600px; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 1100px;
-    border-radius: 50px;
-}
-
-    .Map-wrapper {
-        
-        width: auto;
-        height: 500px;
-        
-    }
-    .Maps-conteiner {
-        
-        
-    }
-    .Maps h1 {
-        font-size: 40px;
-    }
-    .Maps li {
-        font-size: 35px;
-    }
-    .Maps a {
-        font-size: 35px;
-    }
-
-    .b5 {
-        height: 80px;
-        width: 400px;
-        font-size: 20px;
-        border-radius: 25px;
-    }
-
-
-   /* Шестой блок */
 
    .OTZ {
   
@@ -99,16 +57,8 @@
     .OTZ h1 {
         
     }
-    .Prem {
         
-        align-items: center;
-    }
 
-    .Prem1,
-    .Prem2,
-    .Prem3,
-    .Prem4,
-    .Prem5 {
-        width: 80%;
-    }
+    
+    
   }

@@ -1,0 +1,169 @@
+/* Общий сброс и базовая настройка */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden; /* Гарантированно скрываем горизонтальную прокрутку */
+}
+
+/* Основные контейнеры */
+.container {
+  margin: 20px auto;
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+.container h1 {
+  font-size: 50px;
+  color: black;
+  text-align: center;
+}
+
+.container1 {
+  display: flex;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+  gap: 30px; /* Уменьшенный отступ для мобильных устройств */
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  max-width: 100%;
+  padding: 15px;
+}
+
+/* Блоки с контентом */
+.block {
+  background-color: white;
+  padding: 30px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px; /* Максимальная ширина, но не более 100% */
+  height: auto; /* Высота подстраивается под контент */
+  min-height: 830px; /* Минимальная высота */
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.block1 {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  min-height: 830px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Изображения */
+.image5, .image6 {
+  max-width: 100%;
+  height: auto;
+  box-shadow: none;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+/* Текст и таблицы */
+.block1 p {
+  margin-top: 0;
+  color: black;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.block1 tr {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Кнопки */
+.button-styleAP {
+  width: 100%;
+  max-width: 350px;
+  height: 60px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  border: 1px solid black;
+  background-color: transparent;
+  margin: 10px 0;
+}
+
+.buttonAP {
+  background-color: transparent;
+  border: 1px solid #2561f9;
+  color: #2561f9;
+  padding: 10px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 18px;
+  margin-top: 30px;
+  width: 180px;
+  height: 50px;
+}
+
+.buttonAP:hover {
+  background-color: #5285fd;
+  color: white;
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+  .container h1 {
+    font-size: 30px;
+  }
+  
+  .container1 {
+    gap: 20px;
+    flex-direction: column;
+  }
+  
+  .block, .block1 {
+    min-height: auto;
+    padding: 20px;
+  }
+  
+  .button-styleAP {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    margin-top: 0px;
+  }
+  .container h1 {
+    font-size: 10px;
+  }
+  
+  .block, .block1 {
+    padding: 15px;
+  }
+  
+  .block1 p {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .container {
+    height: auto;
+  }
+}

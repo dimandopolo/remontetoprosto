@@ -1,89 +1,6 @@
 @media (max-width: 500px) {
   
 
-    /* Первый блок */
-   .parent-Block {
-        height: 600px;
-        background-image: url(FomMob1.jpg);
-  background-size: cover;
-   }
-
-   .window-Block {
-
-   }
-
-   .window-Block a {
-     
-    font-size: 30px;
-   }
-
-   .window-Block h2{
-    margin-top: 100px;
-        font-size: 30px;
-   }
-
-   .window-Block h3 {
-    
-        font-size: 15px;
-   }
-   .b2 {
-    margin-top: 50px;
-   }
-   .b4 {
-    margin-top: 0px;
-   }
-
-   /* Второй блок */
-
-   .service-block {
-        width: auto;
-        height: 600px;
-        align-items: center;
-        margin-left: 3%;
-
-   }
-
-   .service-block h1 {
-        font-size: 30px;
-   }
-
-
-   .IP {
-        font-size: 13px;
-        border-spacing: 30px 30px;
-   }
-   .IP td {
-     font-size: 13px;
-   }
-
-   .iphone,
-   .and,
-   .Not {
-    height: 40px;    
-    width: 110px;
-    font-size: 10px;
-    margin: 5px 5px;
-    border-radius: 10px;
-   }
-
-   .b3 {
-        font-size: 13px;
-        height: 40px;
-        width: 250px;
-
-   }
-
-   .remont-block {
-     height: 2200px;
-     width: auto;
-   }
-   
-   .post {
-     height: 220px;
-     width: 340px;
-   }
-
-
 
 
    /* Третий блок */
@@ -106,9 +23,10 @@
    /* Четвертый блок */
 
     .PL {
-          width: auto;
+          width: 90%;
           margin-bottom: -100px;
           height: 1000px;
+          display: none;
     }
     .PL h1{
        font-size: 22px; 
@@ -127,108 +45,29 @@
 
    /* Пятый блок */
 
-   .Maps h1 {
-     margin-bottom: -100px;
-   }
+   
     
-    .Maps {
-        height:700px;
-        width: auto;
-    }
 
-    .Map-wrapper {
-        
-        flex: 1px;
-        margin: 140px 10px;
-        width: auto;
-        
-        
-    }
-    .Maps-conteiner {
-        margin-top:-150px ;
-        width: 180%;
-        height: 70%;
-        
-    }
-
-   /* Шестой блок */
-
-   .OTZ {
-    margin-top: -50px;
-    height: 70em;
     
-   }
-
-    .OTZ h1 {
-        font-size: 30px;
-    }
-
-    .Prem {
-     flex-direction: column;
-     height: auto;
-     width: auto;
-     margin-top: 0px;
-    }
-    .Prem1 {
-     margin-left: 0px;
-    }
-    .Prem2,
-    .Prem3,
-    .Prem4,
-    .Prem5 {
-     margin-top: -50px;
-    }
-    .containerOr {
-     flex-direction: column; /* Располагаем элементы вертикально */
-     gap: 20px; /* Уменьшаем отступ между блоками */
-     align-items: center; /* Центрируем элементы по горизонтали */
-   }
-
-   .Orig h1{
-     font-size: 30px;
-   }
-   .Orig tr {
-     font-size: 15px;
-   }
-   .Orig td {
-     font-size: 15px;
-   }
-   .Orig {
-     width: auto;
-     height: 400px;
-     margin-left: 50px;
-   }
-   .iphone1 {
-     margin-top: -20px;
-     width: auto;
-     height: 400px;
-   }
 
    .Line {
-     margin-top: 0px;
+     margin-top: 500px;
      height: 400px;
      flex-direction: column; /* Располагаем элементы вертикально */
-   }
+     align-items: center;
+    }
+
    .Line1 {
      flex-direction: column; /* Располагаем элементы вертикально */
-     margin-top: -200px;
-     margin-right: 0px;
-     margin-left: -80px;
+     align-items: center;
+     height: 400px;
+     width: 80%;
+
    }
-   .container h1 {
-     font-size: 30px;
+    .Online1 a {
+     margin-top: 50px;
    }
-   .container1 {
-     flex-direction: column; /* Располагаем элементы вертикально */
-   }
-   .block1 {
-     margin-top: -100px;
-   }
-   .image5,
-   .image6 {
-     width: 90%;
-     height: auto;
-   }
+   
    .IP1 tr {
      font-size: 16px;
    }

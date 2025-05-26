@@ -1,0 +1,39 @@
+.Feedback {
+    color: black;
+    padding: 1%;
+    width: auto;
+    text-align: center;
+    height: auto;
+    display: grid;
+    place-items: center;
+    margin-top: 200px;
+  }
+  
+  .Feedback h1 {
+    font-size: 60px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 500px) {
+
+  .Feedback {
+    margin-top: -50px;
+    height: 70em;
+   }
+
+    .Feedback h1 {
+        font-size: 30px;
+    }
+  }
+  @media (min-width: 1700px) {
+
+    .Feedback {
+      margin-top: -550px;
+      height: 70em;
+      
+     }
+  
+      .Feedback h1 {
+          font-size: 40px;
+      }
+    }

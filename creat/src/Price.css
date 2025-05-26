@@ -1,0 +1,138 @@
+.service-block {
+  background-color: white;
+  color: black;
+  padding: 1%;
+  width: auto;
+  text-align: center;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.iphone,
+.and,
+.Not {
+  height: 55px;
+  width: 270px;
+  border-radius: 15px;
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 5px 10px;
+  background-color: transparent;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+  .remont-block h1 {
+  font-size: 42px;
+}
+
+
+
+
+.Not:hover {
+  background-color: #2B2B2B;
+  color: white;
+}
+
+.iphone:hover {
+  background-color: #2B2B2B;
+  color: white;
+}
+
+.and:hover {
+  background-color: #2B2B2B;
+  color: white;
+}
+
+
+
+
+@media (max-width: 1200px) {
+  .service-block {
+    width: auto;
+
+
+  }
+
+  .service-block h1 {}
+
+
+  .IP {}
+
+  .iphone,
+  .and,
+  .Not {
+    height: 30px;
+    width: 110px;
+    font-size: 10px;
+    margin: 5px 5px;
+  }
+
+
+
+  .remont-block {}
+
+  .post {}
+
+
+}
+
+@media (max-width: 500px) {
+
+  .service-block {
+    
+    width: auto;
+    height: auto;
+    align-items: center;
+  }
+
+  .service-block h1 {
+    font-size: 30px;
+  }
+
+
+  .IP {
+    font-size: 13px;
+    border-spacing: 30px 30px;
+  }
+
+  .IP td {
+    font-size: 13px;
+  }
+
+  .iphone,
+  .and,
+  .Not {
+    height: 40px;
+    width: 100px;
+    font-size: 10px;
+  }
+
+  .b3 {
+    font-size: 13px;
+    height: 40px;
+    width: 200px;
+
+  }
+
+  .remont-block {
+    height: 2200px;
+    width: auto;
+    display: none;
+  }
+
+  .post {
+    height: 220px;
+    width: 340px;
+  }
+
+}
+
+  
+ 

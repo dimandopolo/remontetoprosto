@@ -1,0 +1,55 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    
+  }
+  
+  .header {
+    display: flex;
+    gap: 60px;
+  }
+  
+  .header a {
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+    cursor: pointer;
+    margin-top: 20px;
+    
+  }
+  
+  header a:hover {
+    filter: drop-shadow(0px 0px 20px #2561f940);
+    color: #2561f9;
+  }
+
+  @media (max-width: 1200px) {
+
+    .header {
+      height: 30px;
+    }
+  
+    .header a {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  
+    .header b {
+      font-size: 14px;
+      font-weight: 600;
+    }
+}
+
+@media (max-width: 1050px) {
+
+    .header {
+      height: 20px;
+      display: flex;
+    }
+}  
