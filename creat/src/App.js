@@ -144,6 +144,7 @@ function App() {
     setButtonText(text);
     setActiveService(text); // Устанавливаем активный сервис
   };
+  
 
   // Функция для плавного скроллинга
 
