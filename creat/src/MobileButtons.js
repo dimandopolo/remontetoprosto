@@ -2,8 +2,8 @@ import React from 'react';
 import './MobileButtons.css';
 
 const MobileButtons = ({ 
-  phoneNumber = '+71234567890', 
-  telegramLink = 'https://t.me/username', 
+  phoneNumber = '+79123117276', 
+  telegramLink = 'https://t.me/remontetoprosto1', 
   whatsappLink = 'https://api.whatsapp.com/send?app_absent=0&phone=79823669217',
   callText = 'Позвонить'
 }) => {
