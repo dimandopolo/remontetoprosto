@@ -26,32 +26,12 @@
   }
   .Prem a {
     color: black;
-    
-  }
-  .Prem a {
-    
     font-weight: 400;
+    
   }
+ 
 
-  @media (max-width: 500px) {
-
-  .Prem {
-    flex-direction: column;
-    height: auto;
-    width: auto;
-    margin-top: 0px;
-   }
-   .Prem1 {
-    margin-left: 0px;
-   }
-   
-   .Prem2,
-   .Prem3,
-   .Prem4,
-   .Prem5 {
-    margin-top: -50px;
-   }
-}
+  
 
 @media (min-width: 1700px) {
 .Prem {
@@ -66,4 +46,58 @@
 .Prem5 {
     width: 80%;
 }
+}
+@media (max-width: 1150px) {
+  .Prem {
+    
+    gap: 60px;
+   
+  }
+  
+  .Prem h2 {
+   
+    font-size: 10px;
+  }
+  
+ 
+  .Prem h3 {
+    
+    font-size: 15px;
+  }
+  .Prem a {
+    
+    font-size: 15px;
+  }
+}
+@media (max-width: 850px) {
+  .Prem {
+    
+    gap: 40px;
+   
+  }
+
+  .Prem1 {
+    margin-left: 0px;
+    text-align: center;
+  }
+ }
+ @media (max-width: 500px) {
+
+  .Prem {
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    margin-top: 0px;
+    gap: 30px;
+   }
+   .Prem1 {
+    margin-left: 0px;
+   }
+   
+   .Prem2,
+   .Prem3,
+   .Prem4,
+   .Prem5 {
+    margin-top: -50px;
+   }
 }

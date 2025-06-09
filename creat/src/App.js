@@ -12,6 +12,8 @@ import './media.css';
 import './media2.css';
 import './media2k.css';
 import MetaTags from './MetaTags';
+import MobileButtons from './MobileButtons';
+import Popup from './Popup';
 
 const services = [
   {
@@ -157,6 +159,13 @@ function App() {
       <div>
         <Footer />
       </div>
+      <div>
+        <MobileButtons/>
+      </div>
+      <div>
+        <Popup/>
+      </div>
+
     </div>
   );
 }

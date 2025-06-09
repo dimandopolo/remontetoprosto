@@ -211,7 +211,7 @@ code {
 }
 
 .Line {
-  width: 80%;
+  width: 90%;
   height: 200px;
   display: flex;
   justify-content: center;
@@ -224,7 +224,7 @@ code {
 .Line1 {
   display: flex;
   width: 90%;
-  height: 200px;
+  height: 220px;
 }
 
 .Online1,
@@ -242,10 +242,10 @@ code {
   /* Центрируем элементы по горизонтали */
   justify-content: center;
   /* Центрируем элементы по вертикали */
-  gap: 5px;
+  gap: 10px;
   /* Отступ между кнопками */
   width: 300px;
-  margin-left: 350px; 
+  margin-left: 400px; 
   /* Добавляем отступы внутри блока */
 }
 
@@ -259,13 +259,15 @@ code {
   font-weight: 500;
 }
 
+
 .online-status {
   display: inline-block;
   width: 10px;
   height: 10px;
   background-color: green;
   border-radius: 50%;
-  margin-right: 8px;
+  margin: 0 5px;
+  margin-left: 0px;
   /* Отступ между иконкой и текстом */
 }
 
@@ -348,6 +350,11 @@ code {
 .IP1 td {
   color: grey;
   font-size: 18px;
+}
+.image1 {
+  height: auto;
+  width: 600px;
+  align-items: center;
 }
 
 /* АДАПТИВ */

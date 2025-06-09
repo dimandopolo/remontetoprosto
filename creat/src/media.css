@@ -5,78 +5,12 @@
       margin: 0;
     }
   
-    header {
-       
-        /*align-items: flex-start;  Выравниваем элементы по левому краю */
-        height: 30px;
-        text-align: center;
-        margin-top: 20px;
-        align-items: center;
-    }
-  
-    .header {
-        /*flex-direction: column;  Ссылки также располагаем вертикально */
-        gap: 30px; /* Уменьшаем пробел между ссылками */
-    }
-  
-    .parent-Block {
-      align-items: center;
-    }
-
-    .window-Block a {
-     margin-top: 40px;
-     font-size: 50px;
-  
-    }
-  
-    /* 3 БЛОК */
-  
-  .service-block {
-    background-color: white;
-    /* Цвет фона для блока */
-    color: black;
-    /* Цвет текста */
     
-    /* Внутренние отступы */
-    width: auto;
-    /* Ширина блока */
-    display: flex;
-    text-align: center;
-    /* Центрирование текста */
-    height: auto;
-    margin-top: 10px;
-    flex-direction: column;
-    align-items: center;
-    
-    
-  }
+  
+   
   
   
   
-  .b3 {
-    
-  }
-  
-  /* КАРТЫ  */
-  
-  .Maps {
-    height: 1400px;
-    width: auto;
-    
-  }
-  
-  .Map-wrapper {
-    width: auto;
-    margin: 170px 110px;
-    margin-top: 100px;
-  }
-  
-  .Maps-container {
-    flex-direction: column;    
-    width: 100%;
-    height: 30%; 
-    
-  }
   
   .OTZ {
     height: auto;
@@ -95,27 +29,7 @@
   }
   }
 
-  @media (max-width: 950px) { 
-
-    .Maps {
-      height: 1400px;
-      width: auto;
-    }
-    .Map-wrapper {
-      width: auto;
-      margin: 170px 190px;
-      margin-top: 100px;
-    }
-
-    .Maps-container {
-      flex-direction: column; 
-    width: 100%;
-    height: 20%;
-    }
-   
-  
-    
-}
+ 
   
   
  

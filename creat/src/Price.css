@@ -83,6 +83,22 @@
 
 }
 
+
+@media (max-width: 1150px) {
+  .iphone,
+.and,
+.Not {
+  height: 55px;
+  width: 200px;
+  font-size: 20px;
+}
+.b3 {
+  font-size: 20px;
+  height: 55px;
+  width: 250px;
+
+}
+}
 @media (max-width: 500px) {
 
   .service-block {
@@ -133,6 +149,5 @@
   }
 
 }
-
   
  

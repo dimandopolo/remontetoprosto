@@ -18,14 +18,14 @@
     position: center;
     font-weight: 500;
     justify-content: center;
-    font-size: 35px;
+    font-size: 30px;
     margin-top: 30px;
   }
   
   
   .Orig {
     background-color: white; /* Цвет фона блока */
-    padding: 0px; /* Внутренний отступ блока */
+    padding: 10px; /* Внутренний отступ блока */
     text-align: center; /* Выравнивание текста по центру */
     color: black;
     width: 600px;
@@ -37,13 +37,14 @@
     text-align: left;
     font-size: 22px;
     font-weight: 500;
-    gap: 20px;
+    gap: 30px;  
   }
 
   .Orig td {
     font-size: 20px;
     font-weight: 300;
   }
+  
   .Orig1 {
        display: flex;
       flex-direction: column; /* Располагаем элементы вертикально */
@@ -60,55 +61,99 @@
   }
   
   
-  @media (max-width: 500px) {
-    .containerOrig {
-      
-    }
-    .Orig {
-      width: auto;
-      text-align: left;
-      height: 750px;
-    }
   
-  .Orig1 tr {
-    margin-top: 10px; /* Отступ сверху для второго элемента */
-    color: black;
-    font-weight: 500;
-    text-align: center;
-  }
+@media (max-width: 1150px) {
   
-  .Orig tr {
-    margin-top: 35px; /* Отступ сверху для третьего элемента */
-    color: Black;
-    font-weight: 500;
-  }
-  .Orig td {
-    color: grey;
-    width: 30vh;
-  }
-  .containerOr {
-    flex-direction: column; /* Располагаем элементы вертикально */
-    gap: 10px; /* Уменьшаем отступ между блоками */
-    align-items: center; /* Центрируем элементы по горизонтали */
+  .Orig {
+    width: auto;
+    text-align: left;
+    height: 750px;
+    gap: 0px;
   }
 
-  .Orig h1{
-    font-size: 25px;
-  }
-  .Orig tr {
-    font-size: 15px;
-  }
-  .Orig td {
-    font-size: 15px;
-  }
+
+
+.Orig tr {
+  margin-top: 40px; /* Отступ сверху для третьего элемента */
+  color: Black;
+  font-weight: 500;
+}
+.Orig td {
+  color: grey;
+  width: 40vh;
+}
+.containerOr {
   
-  .Orig1 {
+  gap: 10px; /* Уменьшаем отступ между блоками */
+  align-items: center; /* Центрируем элементы по горизонтали */
+}
+
+.Orig h1{
+  font-size: 25px;
+  align-items: center;
+}
+.Orig tr {
+  font-size: 15px;
+}
+.Orig td {
+  font-size: 15px;
+}
+
+.Orig1 {
+  
+}
+.iphone1 {
+  width: auto;
+  height: 450px;
+  
+}
+}
+@media (max-width: 500px) {
+  .containerOrig {
     
   }
-  .iphone1 {
-    margin-top: -20px;
+  .Orig {
     width: auto;
-    height: 300px;
-    
+    text-align: left;
+    height: 750px;
+    gap: 0px;
   }
+
+
+
+.Orig tr {
+  margin-top: 35px; /* Отступ сверху для третьего элемента */
+  color: Black;
+  font-weight: 500;
+}
+.Orig td {
+  color: grey;
+  width: 40vh;
+}
+.containerOr {
+  flex-direction: column; /* Располагаем элементы вертикально */
+  gap: 10px; /* Уменьшаем отступ между блоками */
+  align-items: center; /* Центрируем элементы по горизонтали */
+}
+
+.Orig h1{
+  font-size: 25px;
+  align-items: center;
+}
+.Orig tr {
+  font-size: 15px;
+}
+.Orig td {
+  font-size: 15px;
+}
+
+.Orig1 {
+  
+}
+.iphone1 {
+  margin-top: -200px;
+  width: auto;
+  height: 300px;
+  
+}
 }
