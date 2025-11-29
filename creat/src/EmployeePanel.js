@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './EmployeePanel.css';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:8000' 
+  : '/api';
 
 function EmployeePanel() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
