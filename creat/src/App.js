@@ -14,6 +14,7 @@ import './media2k.css';
 import MetaTags from './MetaTags';
 import MobileButtons from './MobileButtons';
 import Popup from './Popup';
+import EmployeePanel from './EmployeePanel';
 
 const services = [
   {
@@ -130,6 +131,8 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
+  const isEmployeeMode = window.location.pathname === '/employee';  
+  
   const { title, description } = services[currentService];
 
   const handleOpenModal = () => {
@@ -144,10 +147,10 @@ function App() {
     setButtonText(text);
     setActiveService(text); // Устанавливаем активный сервис
   };
-  
 
-  // Функция для плавного скроллинга
-
+  if (isEmployeeMode) {
+    return <EmployeePanel />;
+  }
 
   return (
     <div>
@@ -259,7 +262,6 @@ function App() {
       <div>
         <Popup/>
       </div>
-
     </div>
   );
 }
