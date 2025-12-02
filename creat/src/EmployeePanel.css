@@ -1,3 +1,39 @@
+.autocomplete-container {
+  position: relative;
+  /* Убрана фиксированная высота */
+}
+
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  color: #000;
+}
+
+.suggestion-item {
+  padding: 10px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid grey;
+  transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+  background-color: #f5f5f5;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
 .employee-panel {
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -99,8 +135,8 @@
 }
 
 .model {
-  font-size: 14px;
-  color: #666;
+  font-size: 18px;
+  color: Black;
 }
 
 .delete-card-button {
@@ -136,6 +172,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .price {
@@ -150,6 +188,15 @@
   background: #f8f9fa;
   padding: 4px 8px;
   border-radius: 12px;
+}
+
+.warranty-badge {
+  font-size: 14px;
+  color: #28a745;
+  background: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: 1px solid #28a745;
 }
 
 .comment-preview {
@@ -207,7 +254,7 @@
   box-shadow: 0 5px 15px rgba(108, 117, 125, 0.2);
 }
 
-/* Экран входа - БЕЗ ФОНА */
+/* Экран входа */
 .login-container {
   min-height: 100vh;
   background: white;
@@ -274,9 +321,9 @@
   transition: all 0.3s ease;
   position: relative;
   z-index: 2;
-  color: transparent; /* Скрываем текст */
-  caret-color: transparent; /* Скрываем курсор */
-  text-shadow: 0 0 0 transparent; /* Убираем тень текста */
+  color: transparent;
+  caret-color: transparent;
+  text-shadow: 0 0 0 transparent;
 }
 
 .code-input:focus {
@@ -286,7 +333,6 @@
   transform: translateY(-2px);
 }
 
-/* Убираем выделение текста */
 .code-input::selection {
   background: transparent;
 }
@@ -352,31 +398,7 @@
   padding-top: 20px;
 }
 
-/* Анимации */
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Модальное окно - современный дизайн */
+/* Модальное окно */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -461,6 +483,7 @@
   padding: 0 30px 30px;
 }
 
+/* Стандартная строка формы */
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -468,10 +491,26 @@
   margin-bottom: 20px;
 }
 
+/* Компактная строка для времени и гарантии */
+.form-row.compact-row {
+  margin-bottom: 15px;
+  gap: 15px;
+}
+
+.form-row.compact-row .form-group {
+  margin-bottom: 0;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-bottom: 20px;
+}
+
+/* Для компактного ряда уменьшаем отступы */
+.form-row.compact-row .form-group {
+  margin-bottom: 0;
 }
 
 .form-group label {
@@ -490,6 +529,11 @@
   font-size: 16px;
 }
 
+/* Для комментария убираем звездочку */
+.form-group:has(textarea) label::after {
+  content: '';
+}
+
 .form-input, .form-textarea, .form-select {
   padding: 14px 16px;
   border: 2px solid #e1e5e9;
@@ -498,6 +542,8 @@
   transition: all 0.3s ease;
   background: white;
   font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-input:focus, .form-textarea:focus, .form-select:focus {
@@ -523,11 +569,13 @@
   background-repeat: no-repeat;
   background-position: right 16px center;
   padding-right: 40px;
+  cursor: pointer;
 }
 
-/* Специальные стили для комментария */
-.form-group:last-of-type label::after {
-  content: '';
+/* Компактные селекты */
+.form-row.compact-row .form-select {
+  padding: 12px 16px;
+  font-size: 14px;
 }
 
 .modal-actions {
@@ -581,6 +629,35 @@
   transform: translateY(0);
 }
 
+/* Анимации */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
   .employee-panel {
@@ -602,6 +679,10 @@
   .form-row {
     grid-template-columns: 1fr;
     gap: 15px;
+  }
+  
+  .form-row.compact-row {
+    grid-template-columns: 1fr 1fr;
   }
   
   .modal-header {
@@ -647,9 +728,4 @@
 
 .modal-content::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.3);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
