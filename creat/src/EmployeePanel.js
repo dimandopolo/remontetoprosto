@@ -3,20 +3,30 @@ import axios from 'axios';
 import './EmployeePanel.css';
 
 const API_URL = window.location.hostname === 'localhost' 
-  ? 'http://localhost:8000' 
+  ? 'http://localhost:8000/api' 
   : '/api';
 
-
-
 function EmployeePanel() {
-   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [accessCode, setAccessCode] = useState('');
   const [services, setServices] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [editingService, setEditingService] = useState(null);
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const [servicesList] = useState([
+  const [showBrandSuggestions, setShowBrandSuggestions] = useState(false);
+  const [newService, setNewService] = useState({
+    brand: '',
+    model: '',
+    service: '',
+    price: '',
+    cost: '',
+    duration: '1-2 часа',
+    comment: ''
+  });
+
+  // Списки для автодополнения
+  const servicesList = [
     "Замена дисплейного модуля (ORIG)",
     "Замена дисплейного модуля (OLED)",
     "Замена дисплейного модуля (Копия IPS)",
@@ -37,9 +47,9 @@ function EmployeePanel() {
     "Замена микрофона",
     "Полировка стекла дисплея",
     "Разбор/Сбор"
-  ]);
-  const [showBrandSuggestions, setShowBrandSuggestions] = useState(false);
-  const [brandsList] = useState([
+  ];
+
+  const brandsList = [
     "Apple",
     "iPhone",
     "Samsung", 
@@ -49,7 +59,6 @@ function EmployeePanel() {
     "Google",
     "OnePlus",
     "Apple Watch",
-    "iPhone",
     "iPad",
     "Macbook",
     "Realme",
@@ -66,18 +75,7 @@ function EmployeePanel() {
     "IQOO",
     "Nothing",
     "Blackview"
-  ]);
-  
-  const [newService, setNewService] = useState({
-    brand: '',
-    model: '',
-    service: '',
-    price: '',
-    cost: '',
-    duration: '1-2 часа',
-    warranty: '30 дней',
-    comment: ''
-  });
+  ];
 
   // Правильный код доступа
   const correctCode = '7662';
@@ -95,17 +93,17 @@ function EmployeePanel() {
   const handleLogout = () => {
     setIsAuthenticated(false);
     setAccessCode('');
+    setServices([]);
   };
 
-  // Получить все услуги
-    // Получить все услуги
+  // Получить все услуги с API
   const fetchServices = async () => {
     try {
       const response = await axios.get(`${API_URL}/services/`);
       setServices(response.data);
     } catch (error) {
       console.error('Ошибка при загрузке услуг:', error);
-      alert('Не удалось загрузить услуги.');
+      alert('Не удалось загрузить услуги. Проверьте подключение к серверу');
     }
   };
 
@@ -119,7 +117,6 @@ function EmployeePanel() {
       price: '',
       cost: '',
       duration: '1-2 часа',
-      warranty: '30 дней',
       comment: ''
     });
     setShowModal(true);
@@ -137,7 +134,6 @@ function EmployeePanel() {
       price: service.price || '',
       cost: service.cost || '',
       duration: service.duration || '1-2 часа',
-      warranty: service.warranty || '30 дней',
       comment: service.comment || ''
     });
     setShowModal(true);
@@ -153,52 +149,48 @@ function EmployeePanel() {
     setShowBrandSuggestions(false);
   };
 
-  // Добавить/обновить услугу
+  // Добавить/обновить услугу через API
   const saveService = async (e) => {
     e.preventDefault();
     
     try {
+      const serviceData = {
+        ...newService,
+        price: parseFloat(newService.price),
+        cost: parseFloat(newService.cost),
+        device: `${newService.brand} ${newService.model}`.trim()
+      };
+
       if (editingService) {
-        const updatedServices = services.map(s => 
-          s.id === editingService.id 
-            ? { 
-                ...newService, 
-                id: editingService.id,
-                price: parseFloat(newService.price),
-                cost: parseFloat(newService.cost),
-                device: `${newService.brand} ${newService.model}`.trim()
-              }
-            : s
-        );
-        setServices(updatedServices);
+        // Обновление существующей услуги
+        await axios.put(`${API_URL}/services/${editingService.id}`, serviceData);
         alert('Услуга обновлена!');
       } else {
-        const newServiceWithId = {
-          ...newService,
-          id: Date.now(),
-          price: parseFloat(newService.price),
-          cost: parseFloat(newService.cost),
-          device: `${newService.brand} ${newService.model}`.trim()
-        };
-        setServices([...services, newServiceWithId]);
+        // Создание новой услуги
+        await axios.post(`${API_URL}/services/`, serviceData);
         alert('Услуга добавлена!');
       }
       
       closeModal();
+      await fetchServices(); // Обновляем список после сохранения
     } catch (error) {
       console.error('Ошибка при сохранении услуги:', error);
-      alert('Ошибка при сохранении услуги');
+      if (error.response?.status === 409) {
+        alert('Такая услуга уже существует для данной модели!');
+      } else {
+        alert('Ошибка при сохранении услуги. Проверьте данные и подключение к серверу');
+      }
     }
   };
 
-  // Удалить услугу
+  // Удалить услугу через API
   const deleteService = async (serviceId, e) => {
     e.stopPropagation();
     if (window.confirm('Вы уверены, что хотите удалить эту услугу?')) {
       try {
-        const updatedServices = services.filter(service => service.id !== serviceId);
-        setServices(updatedServices);
-        alert('Услуга удалена! (локально)');
+        await axios.delete(`${API_URL}/services/${serviceId}`);
+        await fetchServices(); // Обновляем список после удаления
+        alert('Услуга удалена!');
       } catch (error) {
         console.error('Ошибка при удалении услуги:', error);
         alert('Ошибка при удалении услуги');
@@ -206,31 +198,31 @@ function EmployeePanel() {
     }
   };
 
+  // Закрытие модального окна по нажатию ESC
+  useEffect(() => {
+    const handleEscKey = (event) => {
+      if (event.key === 'Escape' && showModal) {
+        closeModal();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscKey);
+
+    return () => {
+      document.removeEventListener('keydown', handleEscKey);
+    };
+  }, [showModal]);
+
   useEffect(() => {
     if (isAuthenticated) {
       fetchServices();
     }
   }, [isAuthenticated]);
 
-
-// Закрытие модального окна по нажатию ESC
-useEffect(() => {
-  const handleEscKey = (event) => {
-    if (event.key === 'Escape' && showModal) {
-      closeModal();
-    }
-  };
-
-  document.addEventListener('keydown', handleEscKey);
-
-  return () => {
-    document.removeEventListener('keydown', handleEscKey);
-  };
-}, [showModal, closeModal]); // Зависимости: showModal и closeModal
   // Фильтрация услуг для поиска
   const filteredServices = services.filter(service =>
-    service.device?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    service.service?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (service.device && service.device.toLowerCase().includes(searchTerm.toLowerCase())) ||
+    (service.service && service.service.toLowerCase().includes(searchTerm.toLowerCase())) ||
     (service.brand && service.brand.toLowerCase().includes(searchTerm.toLowerCase())) ||
     (service.model && service.model.toLowerCase().includes(searchTerm.toLowerCase()))
   );
@@ -343,9 +335,6 @@ useEffect(() => {
                 <div className="card-details">
                   <div className="price">{service.price} руб.</div>
                   <div className="duration">⏱️ {service.duration}</div>
-                  {service.warranty && service.warranty !== 'нет гарантии' && (
-                    <div className="warranty-badge">🔧 {service.warranty}</div>
-                  )}
                 </div>
 
                 {service.comment && (
@@ -492,38 +481,22 @@ useEffect(() => {
                 </div>
               </div>
 
-              <div className="form-row compact-row">
-                <div className="form-group">
-                  <label>Время выполнения</label>
-                  <select
-                    value={newService.duration}
-                    onChange={(e) => setNewService({...newService, duration: e.target.value})}
-                    className="form-select"
-                    required
-                  >
-                    <option value="30 минут">30 минут</option>
-                    <option value="1 час">1 час</option>
-                    <option value="1-2 часа">1-2 часа</option>
-                    <option value="2-3 часа">2-3 часа</option>
-                    <option value="3-4 часа">3-4 часа</option>
-                    <option value="1 день">1 день</option>
-                    <option value="2-3 дня">2-3 дня</option>
-                  </select>
-                </div>
-                <div className="form-group">
-                  <label>Гарантия</label>
-                  <select
-                    value={newService.warranty}
-                    onChange={(e) => setNewService({...newService, warranty: e.target.value})}
-                    className="form-select"
-                    required
-                  >
-                    <option value="14 дней">14 дней</option>
-                    <option value="30 дней">30 дней</option>
-                    <option value="90 дней">90 дней</option>
-                    <option value="нет гарантии">нет гарантии</option>
-                  </select>
-                </div>
+              <div className="form-group">
+                <label>Время выполнения</label>
+                <select
+                  value={newService.duration}
+                  onChange={(e) => setNewService({...newService, duration: e.target.value})}
+                  className="form-select"
+                  required
+                >
+                  <option value="30 минут">30 минут</option>
+                  <option value="1 час">1 час</option>
+                  <option value="1-2 часа">1-2 часа</option>
+                  <option value="2-3 часа">2-3 часа</option>
+                  <option value="3-4 часа">3-4 часа</option>
+                  <option value="1 день">1 день</option>
+                  <option value="2-3 дня">2-3 дня</option>
+                </select>
               </div>
 
               <div className="form-group">
