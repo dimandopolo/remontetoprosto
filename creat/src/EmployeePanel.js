@@ -150,38 +150,46 @@ function EmployeePanel() {
   };
 
   // Добавить/обновить услугу через API
-  const saveService = async (e) => {
-    e.preventDefault();
-    
-    try {
-      const serviceData = {
-        ...newService,
-        price: parseFloat(newService.price),
-        cost: parseFloat(newService.cost),
-        device: `${newService.brand} ${newService.model}`.trim()
-      };
+const saveService = async (e) => {
+  e.preventDefault();
+  
+  try {
+    const serviceData = {
+      ...newService,
+      price: parseFloat(newService.price),
+      cost: parseFloat(newService.cost),
+      device: `${newService.brand} ${newService.model}`.trim()
+    };
 
-      if (editingService) {
-        // Обновление существующей услуги
-        await axios.put(`${API_URL}/services/${editingService.id}`, serviceData);
-        alert('Услуга обновлена!');
-      } else {
-        // Создание новой услуги
-        await axios.post(`${API_URL}/services/`, serviceData);
-        alert('Услуга добавлена!');
-      }
+    // ВСЕГДА используем POST - FastAPI сам определяет создать или обновить
+    const response = await axios.post(`${API_URL}/services/`, serviceData);
+    
+    alert(editingService ? 'Услуга обновлена!' : 'Услуга добавлена!');
+    closeModal();
+    await fetchServices(); // Обновляем список после сохранения
+    
+    // Для дебага - выводим ответ сервера
+    console.log('Ответ сервера:', response.data);
+    
+  } catch (error) {
+    console.error('Полная ошибка при сохранении:', error);
+    
+    // Детальный вывод ошибки
+    if (error.response) {
+      console.log('Статус ошибки:', error.response.status);
+      console.log('Данные ошибки:', error.response.data);
+      console.log('Заголовки:', error.response.headers);
       
-      closeModal();
-      await fetchServices(); // Обновляем список после сохранения
-    } catch (error) {
-      console.error('Ошибка при сохранении услуги:', error);
-      if (error.response?.status === 409) {
-        alert('Такая услуга уже существует для данной модели!');
-      } else {
-        alert('Ошибка при сохранении услуги. Проверьте данные и подключение к серверу');
-      }
+      alert(`Ошибка ${error.response.status}: ${JSON.stringify(error.response.data)}`);
+    } else if (error.request) {
+      console.log('Запрос отправлен, но нет ответа:', error.request);
+      alert('Нет ответа от сервера. Проверьте что FastAPI запущен на порту 8000');
+    } else {
+      console.log('Ошибка настройки запроса:', error.message);
+      alert('Ошибка: ' + error.message);
     }
-  };
+  }
+};
 
   // Удалить услугу через API
   const deleteService = async (serviceId, e) => {
